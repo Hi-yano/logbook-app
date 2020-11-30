@@ -1,4 +1,4 @@
-class Equipment < ApplicationRecord
+class Item < ApplicationRecord
 
   belongs_to :area
 

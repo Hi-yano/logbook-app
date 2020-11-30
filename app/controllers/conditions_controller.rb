@@ -6,12 +6,11 @@ class ConditionsController < ApplicationController
 
   def create
     condition = Condition.new(condition_params)
-    # binding.pry
     if condition.valid?
       condition.save
-      redirect_to new_equipment_path
+      redirect_to new_area_item_path(params[:area_id])
     else
-      redirect_to new_area_path
+      render :new
     end
   end
 
