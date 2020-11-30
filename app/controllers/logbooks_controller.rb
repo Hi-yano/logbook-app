@@ -12,7 +12,7 @@ class LogbooksController < ApplicationController
     if logbook.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_area_logbook_path
     end
   end
 
