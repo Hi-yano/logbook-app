@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_034621) do
+ActiveRecord::Schema.define(version: 2020_11_30_040753) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "dive_day", null: false
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 2020_11_29_034621) do
     t.index ["area_id"], name: "index_conditions_on_area_id"
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "thickness", null: false
+    t.integer "type_id", null: false
+    t.integer "weight", null: false
+    t.integer "dive_tank_cap_id", null: false
+    t.integer "dive_tank_type_id", null: false
+    t.bigint "area_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["area_id"], name: "index_items_on_area_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -50,4 +62,5 @@ ActiveRecord::Schema.define(version: 2020_11_29_034621) do
 
   add_foreign_key "areas", "users"
   add_foreign_key "conditions", "areas"
+  add_foreign_key "items", "areas"
 end

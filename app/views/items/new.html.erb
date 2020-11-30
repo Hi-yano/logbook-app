@@ -1,0 +1,28 @@
+<h1>Items#new</h1>
+<p>Find me in app/views/items/new.html.erb</p>
+<%= link_to 'トップページに戻る', root_path %>
+
+<%= form_with(model: @item, url: area_items_path, local: true) do |f| %>
+  <div>
+    <p>厚み</P>
+    <%= f.text_field :thickness, placeholder:"例）5" %>
+  </div>
+  <div>
+    <p>type</P>
+    <%= f.collection_select(:type_id, Suitstype.all, :id, :name, {}) %>
+  </div>
+  <div>
+    <p>weight</P>
+    <%= f.text_field :weight, placeholder:"例）5" %>
+  </div>
+  <div>
+    <p>tank_cap</P>
+    <%= f.collection_select(:dive_tank_cap_id, Capacity.all, :id, :name, {}) %>
+  </div>
+  <div>
+    <p>tank_type</P>
+    <%= f.collection_select(:dive_tank_type_id, Type.all, :id, :name, {}) %>
+  </div>
+
+  <%= f.submit "次へ", class:"sell-btn" %>
+<% end %>
