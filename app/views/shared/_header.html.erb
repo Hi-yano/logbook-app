@@ -1,8 +1,15 @@
-<% if user_signed_in? %>
-  <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
-  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-  <li><%= link_to 'ログブック', new_area_path %></li>
-<% else %>
-  <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
-  <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-<% end %>
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<div class="top-page-header">
+  <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
+<div class="nav">
+  <ul class="lists-left">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li><%= link_to 'ログブック', new_area_path %></li>
+    <% else %>
+      <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+  </ul>
+</div>

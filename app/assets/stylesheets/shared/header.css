@@ -1,0 +1,11 @@
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.furima-icon {
+  width: 5vw;
+  margin-right: 5vw;
+}
