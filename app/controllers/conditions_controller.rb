@@ -5,7 +5,7 @@ class ConditionsController < ApplicationController
   end
 
   def create
-    condition = Condition.new(area_params)
+    condition = Condition.new(condition_params)
     if condition.valid?
       condition.save
       redirect_to new_equipment_path
@@ -16,8 +16,8 @@ class ConditionsController < ApplicationController
 
   private
 
-  def area_params
-    params.require(:condition).permit(:weather, :wind, :wave, :tide_id, :temperature, :water_temperature).merge(user_id: current_user.id)
+  def condition_params
+    params.require(:condition).permit(:weather, :wind, :wave, :tide_id, :temperature, :water_temperature)
   end
 end
 
