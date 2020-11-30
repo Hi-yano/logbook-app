@@ -10,7 +10,7 @@ class ConditionsController < ApplicationController
       condition.save
       redirect_to new_area_item_path(params[:area_id])
     else
-      render :new
+      redirect_to new_area_condition_path
     end
   end
 

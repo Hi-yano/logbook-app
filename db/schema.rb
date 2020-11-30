@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_040753) do
+ActiveRecord::Schema.define(version: 2020_11_30_042332) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "dive_day", null: false
@@ -47,6 +47,22 @@ ActiveRecord::Schema.define(version: 2020_11_30_040753) do
     t.index ["area_id"], name: "index_items_on_area_id"
   end
 
+  create_table "logbooks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "count", null: false
+    t.integer "start_air", null: false
+    t.integer "finish_air", null: false
+    t.integer "max_depth", null: false
+    t.integer "ave_depth", null: false
+    t.string "point", null: false
+    t.time "entry_time", null: false
+    t.time "exit_time", null: false
+    t.text "text", null: false
+    t.bigint "area_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["area_id"], name: "index_logbooks_on_area_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -63,4 +79,5 @@ ActiveRecord::Schema.define(version: 2020_11_30_040753) do
   add_foreign_key "areas", "users"
   add_foreign_key "conditions", "areas"
   add_foreign_key "items", "areas"
+  add_foreign_key "logbooks", "areas"
 end

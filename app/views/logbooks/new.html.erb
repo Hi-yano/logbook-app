@@ -1,6 +1,6 @@
 <h2>ログブック作成ページ</h2>
 <%= link_to 'トップページに戻る', root_path %>
-<%= form_with(model: @log, local: true) do |f| %>
+<%= form_with(model: @logbook, url: area_logbooks_path, local: true) do |f| %>
   <div>
   <p>point</P>
     <%= f.text_field :point, class:"log-input", id:"point", placeholder:"例）マンタスクランブル" %>
