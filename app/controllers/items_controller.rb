@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     if item.valid?  
       item.save
-      redirect_to new_log_path
+      redirect_to new_area_logbook_path
     else
       render :new
     end
