@@ -1,0 +1,59 @@
+.area{
+  display: flex;
+  height: calc(100vh - 90px - 100px);
+}
+
+.area-left{
+  box-shadow: 0px  1px 5px -2px gray inset;
+  background-color: #F8F8F8;
+  width: 20vw;
+}
+
+.area-center{
+  width: calc(100vw - 15vw - 15vw);
+}
+
+.area-right{
+  box-shadow: 0px  1px 5px -2px gray inset;
+  background-color: #F8F8F8;
+  width: 20vw;
+}
+
+.new-logbook{
+  text-decoration: none;
+  color: #333333;
+  margin-right: 3vw;
+  border-bottom: inset 2px #013763;
+}
+
+.form{
+  display: grid;
+  place-items: center;
+  margin-top: 50px;
+}
+
+.log-form{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.left-form{
+  margin-right: 10px;
+}
+
+.log-image{
+  display: grid;
+  place-items: center;
+}
+
+.log-submit{
+  display: grid;
+  place-items: center;
+}
+
+.log-title{
+  margin-top: 50px;
+  text-align: center;
+  flex-wrap: wrap;
+}

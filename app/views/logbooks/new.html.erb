@@ -1,45 +1,47 @@
-<h2>ログブック作成ページ</h2>
-<%= link_to 'トップページに戻る', root_path %>
-<%= form_with(model: @logbook, url: area_logbooks_path, local: true) do |f| %>
-  <div>
-  <p>point</P>
-    <%= f.text_field :point, class:"log-input", id:"point", placeholder:"例）マンタスクランブル" %>
+<%= render "shared/second-header" %>
+
+<div class="area">
+  <div class="area-left">
   </div>
-  <div>
-  <p>Start Air</P>
-    <%= f.text_field :start_air, class:"log-input", id:"start_air", placeholder:"例）200" %>
+  <div class="area-center">
+  <h3 class="log-title">ログを入力</h3>
+  <%= form_with(model: @logbook, url: area_logbooks_path, local: true) do |f| %>
+  <div class="log-form">
+    <div class="left-form">
+      <p>point</P>
+        <%= f.text_field :point, class:"log-input", id:"point", placeholder:"例）マンタスクランブル" %>
+      <p>Start Air</P>
+        <%= f.text_field :start_air, class:"log-input", id:"start_air", placeholder:"例）200" %>
+      <p>Finish Air</P>
+        <%= f.text_field :finish_air, class:"log-input", id:"finish_air", placeholder:"例）90" %>
+      <p>Max Depth</P>
+        <%= f.text_field :max_depth, class:"log-input", id:"max_depth", placeholder:"例）20" %>
+      <p>Ave Depth</P>
+        <%= f.text_field :ave_depth, class:"log-input", id:"min_depth", placeholder:"例）12" %>
+    </div>
+    <div class="right-form">
+      <p>Entry time</P>
+        <%= f.text_field :entry_time, class:"log-input", id:"entry_time", placeholder:"例）13:30" %>
+      <p>Exit time</P>
+        <%= f.text_field :exit_time, class:"log-input", id:"exit_time", placeholder:"例）15:00" %>
+      <p>Count</P>
+        <%= f.text_field :count, class:"log-input", id:"count", placeholder:"例）1" %>
+      <p>備考</P>
+        <%= f.text_area :text, class:"log-input", id:"text", placeholder:"例）発見した生物、バディの名前など" %>
+    </div>
   </div>
-  <div>
-  <p>Finish Air</P>
-    <%= f.text_field :finish_air, class:"log-input", id:"finish_air", placeholder:"例）90" %>
+    <div class="log-image">
+      <p>画像の保存</p>
+        <%= f.file_field :image, id:"log-image" %>
+    </div>
+    <div class="log-submit">
+      <%= f.submit "記録する", class:"sell-btn" %>
+    </div>
+  <% end %>
   </div>
-  <div>
-  <p>Max Depth</P>
-    <%= f.text_field :max_depth, class:"log-input", id:"max_depth", placeholder:"例）20" %>
+
+  <div class="area-right">
   </div>
-  <div>
-  <p>Ave Depth</P>
-    <%= f.text_field :ave_depth, class:"log-input", id:"min_depth", placeholder:"例）12" %>
-  </div>
-  <div>
-  <p>Entry time</P>
-    <%= f.text_field :entry_time, class:"log-input", id:"entry_time", placeholder:"例）13:30" %>
-  </div>
-  <div>
-  <p>Exit time</P>
-    <%= f.text_field :exit_time, class:"log-input", id:"exit_time", placeholder:"例）15:00" %>
-  </div>
-  <div>
-  <p>Count</P>
-    <%= f.text_field :count, class:"log-input", id:"count", placeholder:"例）1" %>
-  </div>
-  <div>
-  <p>備考</P>
-    <%= f.text_area :text, class:"log-input", id:"text", placeholder:"例）発見した生物、バディの名前など" %>
-  </div>
-  <div>
-  <p>画像の保存</p>
-    <%= f.file_field :image, id:"log-image" %>
-  </div>
-    <%= f.submit "記録する", class:"sell-btn" %>
-<% end %>
+</div>
+
+<%= render "shared/footer" %>
