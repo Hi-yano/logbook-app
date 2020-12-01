@@ -1,11 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 .top-page-header {
+  box-shadow: 0px  1px 5px -2px gray inset;
+  height: 100px;
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 1vh 5vw;
   display: flex;
   flex-direction: column;
 }
 
-.furima-icon {
-  width: 5vw;
-  margin-right: 5vw;
+.top-page-contents{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-contents{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.top-icon{
+  font-size: 18px;
+}
+
+.log-icon {
+  width: 70px;
+}
+
+.home-icon{
+  width: 50px;
+  margin-left: 3vw;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: #333333;
+  padding-top: 25px;
+}
+
+.nav {
+  font-size: 18px;
+}
+
+.lists-right {
+  list-style: none;
+  align-items: flex-end;
+  display: flex;
+}
+
+.logout {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+.logbook {
+  text-decoration: none;
+  color: #333333;
 }

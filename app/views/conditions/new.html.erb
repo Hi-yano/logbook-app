@@ -1,32 +1,44 @@
-<h1>Conditions#new</h1>
-<p>Find me in app/views/conditions/new.html.erb</p>
-<%= form_with(model: @condition, url: area_conditions_path, local: true) do |f| %>
-  <h2>condition</h2>
-  <div>
-    <p>weather</P>
-    <%= f.text_field :weather, placeholder:"例）晴れ" %>
-  </div>
-  <div>
-    <p>wind</P>
-    <%= f.text_field :wind, placeholder:"例）3" %>
-  </div>
-  <div>
-    <p>wave</P>
-    <%= f.text_field :wave, placeholder:"例）0.5" %>
-  </div>
-  <div>
-    <p>tide</P>
-    <%= f.collection_select(:tide_id, Tide.all, :id, :name, {}) %>
-  </div>
-  <div>
-    <p>temperature</P>
-    <%= f.text_field :temperature, placeholder:"例）28" %>
-  </div>
-  <div>
-    <p>water_temperature</P>
-    <%= f.text_field :water_temperature, placeholder:"例）23" %>
+
+<%= render "shared/second-header" %>
+
+<div class="area">
+  <div class="area-left">
   </div>
 
+  <div class="area-center">
+  <%= form_with(model: @condition, url: area_conditions_path, local: true) do |f| %>
+    <div class="form">
+    <h2>condition</h2>
+    <div>
+      <p>weather</P>
+      <%= f.text_field :weather, placeholder:"例）晴れ" %>
+    </div>
+    <div>
+      <p>wind</P>
+      <%= f.text_field :wind, placeholder:"例）3" %>
+    </div>
+    <div>
+      <p>wave</P>
+      <%= f.text_field :wave, placeholder:"例）0.5" %>
+    </div>
+    <div>
+      <p>tide</P>
+      <%= f.collection_select(:tide_id, Tide.all, :id, :name, {}) %>
+    </div>
+    <div>
+      <p>temperature</P>
+      <%= f.text_field :temperature, placeholder:"例）28" %>
+    </div>
+    <div>
+      <p>water_temperature</P>
+      <%= f.text_field :water_temperature, placeholder:"例）23" %>
+    </div>
   <%= f.submit "次へ", class:"sell-btn" %>
+  </div>
 <% end %>
-<%= link_to 'トップページに戻る', root_path %>
+</div>
+
+  <div class="area-right">
+  </div>
+</div>
+<%= render "shared/footer" %>
