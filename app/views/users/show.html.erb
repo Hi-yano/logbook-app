@@ -1,0 +1,45 @@
+<header class="top-page-header">
+<div class="top-page-contents">
+  <div class="left-contents">
+    <div class="top-icon">
+      <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
+      <% if user_signed_in? %>
+        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
+      <% end %>
+    </div>
+  </div>
+    <div class="right-contents">
+      <div class="nav">
+        <ul class="lists-right">
+          <p class="new-logbook"><%= @nickname %>さんのマイページ</p>
+        </ul>
+      </div>
+      <%= link_to image_tag("home-icon.png", class:"home-icon"), "#" %>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+  <div class="my-page">
+    <div class="my-page-left">
+    </div>
+      <div class="my-page-center">
+      <div class="day-list">
+      <% @areas.each do |area| %>
+        <div class="day-point">
+          <div class="btn-flat-border">
+            <p><%= area.dive_day %></p>
+            <p><%= area.region%></p>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      </div>
+      <div class="condition-logbook">
+      </div>
+    <div class="my-page-right">
+    </div>
+  </div>
+</main>
+
+<%= render "shared/footer" %>
