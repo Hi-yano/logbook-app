@@ -1,18 +1,7 @@
 .my-page{
   display: flex;
   height: calc(100vh - 90px - 100px);
-}
-
-.my-page-left{
-  box-shadow: 0px  1px 5px -2px gray inset;
-  background-color: #F8F8F8;
-  width: 15vw;
-}
-
-.my-page-right{
-  box-shadow: 0px  1px 5px -2px gray inset;
-  background-color: #F8F8F8;
-  width: 15vw;
+  width: 100vw;
 }
 
 .day-point{
@@ -21,7 +10,6 @@
 }
 
 .btn-flat-border {
-  box-shadow: 0px  1px 5px -2px gray inset;
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -38,4 +26,19 @@
 
 .condition-logbook{
   width: 90%;
+}
+
+.btn-show{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: white;
+  border: solid 2px #013763;
+  border-radius: 3px;
+  transition: .4s;
+  background: #013763;
+}
+
+.logbook-list{
+  width: calc(100% - 140px);
 }

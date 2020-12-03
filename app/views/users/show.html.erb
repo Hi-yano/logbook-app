@@ -1,45 +1,43 @@
+<main>
 <header class="top-page-header">
 <div class="top-page-contents">
   <div class="left-contents">
     <div class="top-icon">
       <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
-      <% if user_signed_in? %>
-        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
-      <% end %>
+      <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
+      さんのマイページ
     </div>
   </div>
     <div class="right-contents">
       <div class="nav">
         <ul class="lists-right">
-          <p class="new-logbook"><%= @nickname %>さんのマイページ</p>
+          <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
         </ul>
       </div>
-      <%= link_to image_tag("home-icon.png", class:"home-icon"), "#" %>
     </div>
   </div>
 </div>
 </header>
-<main>
-  <div class="my-page">
-    <div class="my-page-left">
+  <div class="main">
+    <div class="main-left">
     </div>
-      <div class="my-page-center">
+      <div class="main-center">
       <div class="day-list">
       <% @areas.each do |area| %>
         <div class="day-point">
-          <div class="btn-flat-border">
+          <%= link_to "/users/#{area.user_id}/areas/#{area.id}/index", class: "btn-flat-border" do %>
             <p><%= area.dive_day %></p>
             <p><%= area.region%></p>
-          </div>
+          <% end %>
         </div>
       <% end %>
       </div>
       </div>
       <div class="condition-logbook">
       </div>
-    <div class="my-page-right">
+    <div class="main-right">
     </div>
   </div>
+  <%= render "shared/footer" %>
 </main>
 
-<%= render "shared/footer" %>

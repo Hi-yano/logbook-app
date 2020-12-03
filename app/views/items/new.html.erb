@@ -15,7 +15,7 @@
     </div>
     <div>
       <p>type</P>
-      <%= f.collection_select(:type_id, Suitstype.all, :id, :name, {}) %>
+      <%= f.collection_select(:suitstype_id, Suitstype.all, :id, :name, {}) %>
     </div>
     <div>
       <p>weight</P>
@@ -23,11 +23,11 @@
     </div>
     <div>
       <p>tank_cap</P>
-      <%= f.collection_select(:dive_tank_cap_id, Capacity.all, :id, :name, {}) %>
+      <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}) %>
     </div>
     <div>
       <p>tank_type</P>
-      <%= f.collection_select(:dive_tank_type_id, Type.all, :id, :name, {}) %>
+      <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
     </div>
     <%= f.submit "次へ", class:"sell-btn" %>
   </div>

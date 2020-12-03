@@ -1,7 +1,10 @@
 .footer{
   background-color: #013763;
   height: 90px;
+  width: 100vw;
   align-items: center;
+  position: absolute;
+  bottom: 0; 
 }
 
 .footer-logo{

@@ -6,5 +6,5 @@ self.data = [
 ]
 
 include ActiveHash::Associations
-  has_many :equipments
+  has_many :items
 end

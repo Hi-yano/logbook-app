@@ -11,8 +11,8 @@ class Item < ApplicationRecord
     validates :weight
   end
   with_options numericality: { other_than: 1 } do
+    validates :suitstype_id
+    validates :capacity_id
     validates :type_id
-    validates :dive_tank_cap_id
-    validates :dive_tank_type_id
   end
 end

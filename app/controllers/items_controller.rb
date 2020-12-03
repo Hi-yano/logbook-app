@@ -17,6 +17,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:thickness, :type_id, :weight, :dive_tank_cap_id, :dive_tank_type_id).merge(area_id: params[:area_id])
+    params.require(:item).permit(:thickness, :suitstype_id, :weight, :capacity_id, :type_id).merge(area_id: params[:area_id])
   end
 end
