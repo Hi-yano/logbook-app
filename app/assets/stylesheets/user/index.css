@@ -1,5 +1,9 @@
+.logbook-list{
+  width: calc(100% - 140px);
+}
+
 .condition-log {
-  margin-top: 30px;
+  margin-top: 6vh;
 }
 
 .item-log{
@@ -8,4 +12,22 @@
 
 .logbook-log{
   margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.top-log{
+  display: flex;
+  -webkit-justify-content: flex-start
+}
+
+.lists-log{
+  display: flex;
+}
+
+.log-span{
+  width: 10vw;
+}
+
+.border{
+  border-bottom: dotted black 2px;
 }

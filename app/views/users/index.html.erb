@@ -18,57 +18,114 @@
 </div>
 </div>
 </header>
+<main>
 <div class="main">
   <div class="main-left">
   </div>
   <div class="logbook-center">
     <div class="day-list">
-      <div class="day-point">
-        <div class="btn-show">
-          <p><%= @all.dive_day %></p>
-          <p><%= @all.region%></p>
+      <% @areas.each do |area| %>
+        <% if "#{area.id}" == "#{params[:area_id]}" %>
+        <div class="day-point">
+          <%= link_to "/users/#{area.user_id}/areas/#{area.id}/index", class: "btn-show" do %>
+            <p><%= area.dive_day %></p>
+            <p><%= area.region%></p>
+          <% end %>
         </div>
-      </div>
+        <% else %>
+        <div class="day-point">
+          <%= link_to "/users/#{area.user_id}/areas/#{area.id}/index", class: "btn-flat-border" do %>
+            <p><%= area.dive_day %></p>
+            <p><%= area.region%></p>
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
     <div class="logbook-list">
-      <ul class="condition-log">
-        <h3>コンディション</h3>
-        <li>天気：<%= @all.condition.weather %></li>
-        <li>風速：<%= @all.condition.wind %>m</li>
-        <li>気温：<%= @all.condition.temperature %>℃</li>
-        <li>水温：<%= @all.condition.water_temperature %>℃</li>
-        <li>波高：<%= @all.condition.wave %>m</li>
-        <li>潮流：</span><%= @all.condition.tide.name %></li>
-      </ul>
-      <ul class="item-log">
-        <h3>装備品</h3>
-        <li>タイプ：</span><%= @item.suitstype.name %></li>
-        <li>厚み：</span><%= @item.thickness %></li>
-        <li>ウエイト：</span><%= @item.weight %></li>
-        <li>タンクタイプ：</span><%= @item.type.name %></li>
-        <li>タンク容量：</span><%= @item.capacity.name %></li>
-      </ul>
-      <ul class="logbook-log">
-        <h3>記録</h3>
-        <li><span class="log-span">本数：</span><%= @logbook.count %></li>
-        <li><span class="log-span">エントリー方法：</span><%= @all.entry.name %></li>
-        <li><span class="log-span">ポイント：</span><%= @logbook.point %></li>
-        <li><span class="log-span">エントリータイム：</span><%= @logbook.entry_time.strftime('%H:%M') %></li>
-        <li><span class="log-span">エキジットタイム：</span><%= @logbook.exit_time.strftime('%H:%M') %></li>
-        <li><span class="log-span">スタート（残圧）：</span><%= @logbook.start_air %></li>
-        <li><span class="log-span">エキジット（残圧）：</span><%= @logbook.finish_air %></li>
-        <li><span class="log-span">最大深度：</span><%= @logbook.max_depth %></li>
-        <li><span class="log-span">平均深度：</span><%= @logbook.ave_depth %></li>
-        <li><span class="log-span">備考：</span><%= @logbook.text %></li>
-      </ul>
-      <div class="image-area">
-      <%= image_tag @logbook.image.variant(resize: '500x500'), class: 'logbook-image' if @logbook.image.attached? %>
+      <div class="top-log">
+        <ul class="condition-log">
+          <h3>コンディション</h3>
+          <div class="lists-log">
+            <p class="log-span">天気</p><%= @all.condition.weather %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">風速</p><%= @all.condition.wind %>m
+          </div>
+          <div class="lists-log">
+            <p class="log-span">気温</p><%= @all.condition.temperature %>℃
+          </div>
+          <div class="lists-log">
+            <p class="log-span">水温</p><%= @all.condition.water_temperature %>℃
+          </div>
+          <div class="lists-log">
+            <p class="log-span">波高</p><%= @all.condition.wave %>m
+          </div>
+          <div class="lists-log">
+            <p class="log-span">潮流</p><%= @all.condition.tide.name %>
+          </div>
+          <ul class="item-log">
+          <h3>装備品</h3>
+          <div class="lists-log">
+            <p class="log-span">スーツ</p><%= @item.suitstype.name %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">厚み</p><%= @item.thickness %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">ウエイト</p><%= @item.weight %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">タンクタイプ</p><%= @item.type.name %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">タンク容量</p><%= @item.capacity.name %>
+          </div>
+          </ul>
+        </ul>
+        <div class="image-area">
+          <p>Photo</p>
+          <%= image_tag @logbook.image.variant(resize: '500x500'), class: 'logbook-image' if @logbook.image.attached? %>
+        </div>
+      </div>
+        <ul class="logbook-log">
+          <h3>記録</h3>
+          <div class="lists-log">
+            <p class="log-span">本数</p><%= @logbook.count %>本目
+          </div>
+          <div class="lists-log">
+            <p class="log-span">エントリー方法</p><%= @all.entry.name %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">ポイント</p><%= @logbook.point %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">エントリータイム</p><%= @logbook.entry_time.strftime('%H:%M') %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">エキジットタイム</p><%= @logbook.exit_time.strftime('%H:%M') %>
+          </div>          
+          <div class="lists-log">
+            <p class="log-span">スタート（残圧）</p><%= @logbook.start_air %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">エキジット（残圧）</p><%= @logbook.finish_air %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">最大深度</p><%= @logbook.max_depth %>m
+          </div>
+          <div class="lists-log">
+            <p class="log-span">平均深度</p><%= @logbook.ave_depth %>m
+          </div>
+          <div class="logbook-log">
+            <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p><%= @logbook.text %>
+          </div>
+        </ul>
       </div>
     </div>
     <div class="main-right">
     </div>
   </div>
 </div>
-
-<%= render "shared/footer" %>
+</main>
