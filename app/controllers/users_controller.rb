@@ -12,4 +12,8 @@ class UsersController < ApplicationController
     @nickname = user.nickname
     @areas = user.areas
   end
+
+  def search
+    @areas = Area.search(params[:keyword])
+  end
 end

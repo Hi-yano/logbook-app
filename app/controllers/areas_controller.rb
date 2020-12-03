@@ -5,7 +5,6 @@ class AreasController < ApplicationController
 
   def create
     area = Area.new(area_params)
-    # binding.pry
     if area.valid?
       area.save
       redirect_to new_area_condition_path(area)

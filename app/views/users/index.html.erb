@@ -1,22 +1,29 @@
 <header class="top-page-header">
-<div class="top-page-contents">
-  <div class="left-contents">
-    <div class="top-icon">
-      <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
-      <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
-      さんのマイページ
+  <div class="top-page-contents">
+    <div class="left-contents">
+      <div class="top-icon">
+        <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
+        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
+        さんのマイページ
+      </div>
+    </div>
+    <div>
+      <div class="right-contents">
+        <div class="nav">
+          <ul class="lists-right">
+            <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
+            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %>
+          </ul>
+        </div>
+        <div class="search" style="text-align: right">
+        <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "日付検索", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="right-contents">
-    <div class="nav">
-      <ul class="lists-right">
-        <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
-        <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
 </header>
 <main>
 <div class="main">
@@ -51,16 +58,16 @@
             <p class="log-span">天気</p><%= @all.condition.weather %>
           </div>
           <div class="lists-log">
-            <p class="log-span">風速</p><%= @all.condition.wind %>m
+            <p class="log-span">風速</p><%= @all.condition.wind %>/m
           </div>
           <div class="lists-log">
-            <p class="log-span">気温</p><%= @all.condition.temperature %>℃
+            <p class="log-span">気温</p><%= @all.condition.temperature %>/℃
           </div>
           <div class="lists-log">
-            <p class="log-span">水温</p><%= @all.condition.water_temperature %>℃
+            <p class="log-span">水温</p><%= @all.condition.water_temperature %>/℃
           </div>
           <div class="lists-log">
-            <p class="log-span">波高</p><%= @all.condition.wave %>m
+            <p class="log-span">波高</p><%= @all.condition.wave %>/m
           </div>
           <div class="lists-log">
             <p class="log-span">潮流</p><%= @all.condition.tide.name %>
@@ -71,16 +78,16 @@
             <p class="log-span">スーツ</p><%= @item.suitstype.name %>
           </div>
           <div class="lists-log">
-            <p class="log-span">厚み</p><%= @item.thickness %>
+            <p class="log-span">厚み</p><%= @item.thickness %>/mm
           </div>
           <div class="lists-log">
-            <p class="log-span">ウエイト</p><%= @item.weight %>
+            <p class="log-span">ウエイト</p><%= @item.weight %>/kg
           </div>
           <div class="lists-log">
             <p class="log-span">タンクタイプ</p><%= @item.type.name %>
           </div>
           <div class="lists-log">
-            <p class="log-span">タンク容量</p><%= @item.capacity.name %>
+            <p class="log-span">タンク容量</p><%= @item.capacity.name %>/L
           </div>
           </ul>
         </ul>
@@ -92,7 +99,7 @@
         <ul class="logbook-log">
           <h3>記録</h3>
           <div class="lists-log">
-            <p class="log-span">本数</p><%= @logbook.count %>本目
+            <p class="log-span">本数</p><%= @logbook.count %>/本目
           </div>
           <div class="lists-log">
             <p class="log-span">エントリー方法</p><%= @all.entry.name %>
@@ -107,16 +114,16 @@
             <p class="log-span">エキジットタイム</p><%= @logbook.exit_time.strftime('%H:%M') %>
           </div>          
           <div class="lists-log">
-            <p class="log-span">スタート（残圧）</p><%= @logbook.start_air %>
+            <p class="log-span">スタート（残圧）</p><%= @logbook.start_air %>/bar
           </div>
           <div class="lists-log">
-            <p class="log-span">エキジット（残圧）</p><%= @logbook.finish_air %>
+            <p class="log-span">エキジット（残圧）</p><%= @logbook.finish_air %>/bar
           </div>
           <div class="lists-log">
-            <p class="log-span">最大深度</p><%= @logbook.max_depth %>m
+            <p class="log-span">最大深度</p><%= @logbook.max_depth %>/m
           </div>
           <div class="lists-log">
-            <p class="log-span">平均深度</p><%= @logbook.ave_depth %>m
+            <p class="log-span">平均深度</p><%= @logbook.ave_depth %>/m
           </div>
           <div class="logbook-log">
             <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p><%= @logbook.text %>
