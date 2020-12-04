@@ -1,30 +1,4 @@
-<header class="top-page-header">
-  <div class="top-page-contents">
-    <div class="left-contents">
-      <div class="top-icon">
-        <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
-        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
-        さんのマイページ
-      </div>
-    </div>
-    <div>
-      <div class="right-contents">
-        <div class="nav">
-          <ul class="lists-right">
-            <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
-            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %>
-          </ul>
-        </div>
-        <div class="search" style="text-align: right">
-        <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "日付検索", class: "search-input" %>
-          <%= form.submit "検索", class: "search-btn" %>
-        <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+<%= render "shared/mypage" %>
 <main>
   <div class="main">
     <div class="main-left">

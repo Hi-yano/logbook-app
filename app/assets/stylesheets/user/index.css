@@ -1,9 +1,11 @@
 .logbook-list{
   width: calc(100% - 140px);
+  height: calc(100vh - 100px - 40px);
+  overflow: scroll;
 }
 
 .condition-log {
-  margin-top: 6vh;
+  margin-top: 2vh;
 }
 
 .item-log{
@@ -30,4 +32,8 @@
 
 .border{
   border-bottom: dotted black 2px;
+}
+
+.logbook-center{
+  overflow: scroll;
 }

@@ -14,6 +14,15 @@ class UsersController < ApplicationController
   end
 
   def search
-    @areas = Area.search(params[:keyword])
+    if params[:year].present? && params[:month].present?
+      keyword = "#{params[:year]}-#{params[:month]}"
+      @areas = Area.search(keyword, 1)
+    elsif params[:year] == ""
+      keyword = "#{params[:month]}"
+      @areas = Area.search(keyword, 2)
+    else
+      keyword = "#{params[:year]}"
+      @areas = Area.search(keyword, 3)
+    end
   end
 end

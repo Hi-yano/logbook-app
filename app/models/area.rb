@@ -13,9 +13,15 @@ class Area < ApplicationRecord
     validates :entry_id
   end
 
-  def self.search(search)
+  def self.search(search, num)
     if search != ""
-      Area.where('dive_day LIKE(?)', "%#{search}%")
+      if num == 1
+      Area.where('dive_day LIKE(?)', "#{search}-__")
+      elsif num == 2
+        Area.where('dive_day LIKE(?)', "20__-#{search}-__")
+      elsif num == 3
+        Area.where('dive_day LIKE(?)', "#{search}%")  
+      end
     else
       Area.all
     end
