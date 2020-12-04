@@ -12,7 +12,8 @@
         <div class="nav">
           <ul class="lists-right">
             <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
-            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %>
+            <li><%= link_to 'ツイート', new_tweet_path, class: "logbook" %></li>
+            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %></li>
           </ul>
         </div>
         <%# 検索機能の呼び出し %>
