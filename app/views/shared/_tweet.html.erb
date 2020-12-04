@@ -1,4 +1,14 @@
-<% @tweets.each do |tweet| %>
-  <%= image_tag tweet.image.variant(resize: '500x500'), class: 'logbook-image' if tweet.image.attached? %>
-  <%= tweet.text %>
-<% end %>
+<div class="tweet-list">
+  <% @tweets.each do |tweet| %>
+  <div class="tweet-list">
+    <div class="tweet-image-area">
+      <%= image_tag tweet.image.variant(resize: '500x500'), class: 'tweet-image' if tweet.image.attached? %>
+    </div>
+    <div class="tweet-text-area">
+      <div class="tweet-text">
+        <%= tweet.text %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
