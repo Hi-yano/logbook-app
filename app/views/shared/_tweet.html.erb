@@ -1,0 +1,10 @@
+<div class="contents row">
+  <% @tweets.each do |tweet| %>
+    <%= image_tag tweet.image, class: 'tweet-image' %>
+      <p><%= tweet.text %></p>
+      <span class="name">
+        <%= tweet.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
