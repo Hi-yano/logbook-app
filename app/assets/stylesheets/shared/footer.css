@@ -1,7 +1,10 @@
-.footer{
+footer{
   background-color: #013763;
-  height: 90px;
+  height: 40px;
+  width: 100vw;
   align-items: center;
+  position:fixed;
+  bottom: 0;
 }
 
 .footer-logo{
@@ -13,9 +16,11 @@
   color: #919191;
   display: flex;
   justify-content: center;
-  margin: -5px;
+  margin: -10px;
+  font-size: 5px;
 }
 
 .logo-white{
-  width: 270px;
+  width: 120px;
+  margin-top: 3px;
 }

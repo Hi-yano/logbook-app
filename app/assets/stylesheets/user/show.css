@@ -1,0 +1,33 @@
+.day-point{
+  margin: 30px 30px 0px 30px;
+  width: 140px;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #013763;
+  border: solid 2px #013763;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #013763;
+  color: white;
+}
+
+.condition-logbook{
+  width: 90%;
+}
+
+.btn-show{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: white;
+  border: solid 2px #013763;
+  border-radius: 3px;
+  background: #013763;
+}

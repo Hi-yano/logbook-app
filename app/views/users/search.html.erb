@@ -1,0 +1,23 @@
+<%= render "shared/mypage" %>
+<main>
+  <div class="main">
+    <div class="main-left">
+    </div>
+      <div class="main-center">
+      <div class="day-list">
+      <% @areas.each do |area| %>
+        <div class="day-point">
+          <%= link_to "/users/#{area.user_id}/areas/#{area.id}/index", class: "btn-flat-border" do %>
+            <p><%= area.dive_day %></p>
+            <p><%= area.region%></p>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
+      </div>
+      <div class="condition-logbook">
+      </div>
+    <div class="main-right">
+    </div>
+  </div>
+</main>

@@ -6,6 +6,6 @@ class Suitstype < ActiveHash::Base
   ]
   
   include ActiveHash::Associations
-    has_many :equipments
+    has_many :items
   end
   

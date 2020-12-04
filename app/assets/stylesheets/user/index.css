@@ -1,0 +1,39 @@
+.logbook-list{
+  width: calc(100% - 140px);
+  height: calc(100vh - 100px - 40px);
+  overflow: scroll;
+}
+
+.condition-log {
+  margin-top: 2vh;
+}
+
+.item-log{
+  margin-top: 10px;
+}
+
+.logbook-log{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.top-log{
+  display: flex;
+  -webkit-justify-content: flex-start
+}
+
+.lists-log{
+  display: flex;
+}
+
+.log-span{
+  width: 10vw;
+}
+
+.border{
+  border-bottom: dotted black 2px;
+}
+
+.logbook-center{
+  overflow: scroll;
+}

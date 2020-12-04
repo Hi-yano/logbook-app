@@ -4,7 +4,7 @@
     <div class="top-icon">
       <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
       <% if user_signed_in? %>
-        <%= link_to current_user.nickname, root_path, class: "user-nickname" %>
+        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
       <% end %>
     </div>
   </div>
@@ -13,14 +13,13 @@
         <ul class="lists-right">
           <% if user_signed_in? %>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-            <li><%= link_to 'ログブック', new_area_path, class: "logbook" %></li>
+            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %></li>
           <% else %>
             <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
             <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
           <% end %>
         </ul>
       </div>
-      <%= link_to image_tag("home-icon.png", class:"home-icon"), "#" %>
     </div>
   </div>
 </div>
