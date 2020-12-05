@@ -8,14 +8,16 @@
       <% end %>
     </div>
   </div>
+  <div class="header-right">
     <div class="right-contents">
-      <div class="nav">
         <ul class="lists-right">
           <% if user_signed_in? %>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %></li>
+            <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "logout" %></li>
+            <li><%= link_to image_tag("logbook-icon.png", class:"right-icon"), new_area_path %></li>
+            <li><%= link_to image_tag("tweet-icon.png", class:"right-icon"), new_tweet_path %></li>
+            <li><%= link_to image_tag("home-icon.png", class:"right-icon"), user_path(current_user.id) %></li>
           <% else %>
-            <li><%= link_to 'ログイン',  new_user_session_path, class: "login" %></li>
+            <li><%= link_to 'LOGIN',  new_user_session_path, class: "login" %></li>
             <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
           <% end %>
         </ul>
