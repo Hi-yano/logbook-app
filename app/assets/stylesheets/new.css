@@ -1,6 +1,6 @@
 .area{
   display: flex;
-  height: calc(100vh - 90px - 100px);
+  height: calc(100vh - 70px - 40px);
 }
 
 .area-left{

@@ -1,6 +1,6 @@
 .login-main{
   display: flex;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 20px - 90px);
 }
 
 .login-group{
@@ -10,9 +10,7 @@
 }
 
 .login-center{
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .actions{

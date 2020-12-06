@@ -36,7 +36,6 @@ header {
 .header-right{
   display: flex;
   align-items: center;
-  width: 265px;
 }
 
 .right-contents{
@@ -60,7 +59,6 @@ header {
 
 .lists-right {
   display: flex;
-  width: 15vw;
 }
 
 .logout {
@@ -79,6 +77,7 @@ header {
 
 .sign-up {
   text-decoration: none;
+  line-height: 32px;
   color: #333333;
 }
 
@@ -116,5 +115,5 @@ header {
 
 .right-icon{
   width: 30px;
-  margin-left: 2vw;
+  margin-right: 2vw;
 }

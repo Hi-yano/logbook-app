@@ -15,11 +15,13 @@
 .logbook-log{
   margin-top: 10px;
   margin-bottom: 30px;
+  margin-left: 20px;
 }
 
 .top-log{
   display: flex;
-  -webkit-justify-content: flex-start
+  -webkit-justify-content: flex-start;
+  margin-left: 20px;
 }
 
 .lists-log{
@@ -36,4 +38,6 @@
 
 .logbook-center{
   overflow: scroll;
+  background-color: #F8F8F8;
+  box-shadow: 0px  1px 5px -2px gray inset;
 }

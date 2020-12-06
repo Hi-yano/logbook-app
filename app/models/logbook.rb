@@ -2,7 +2,7 @@ class Logbook < ApplicationRecord
   belongs_to :area
   has_one_attached :image
 
-  with_options presence: true, format: { with: /\A([01][0-9]|2[0-3]):[0-5][0-9]\Z/ } do
+  with_options presence: true do
     validates :entry_time
     validates :exit_time
   end

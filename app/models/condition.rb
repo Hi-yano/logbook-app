@@ -3,11 +3,13 @@ class Condition < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :tide
 
-  validates :weather, presence: true
+with_options presence: true do
+  validates :weather
+  validates :wave, format: { with: /\A[-]?[0-9]+(\.[0-9]+)?\z/ }
+end
 
   with_options presence: true, format: { with: /\A[0-9]+\z/ } do
     validates :wind
-    validates :wave
     validates :temperature
     validates :water_temperature
   end
