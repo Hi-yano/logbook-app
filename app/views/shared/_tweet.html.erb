@@ -5,7 +5,8 @@
         <%= image_tag tweet.image.variant(resize: '500x500'), class: 'tweet-image' if tweet.image.attached? %>
     </div>
     <div class="tweets-nickname">投稿者：<%= tweet.user.nickname %></div>
-    <%= link_to '編集' %>
+    <%= link_to '編集', edit_tweet_path(tweet.id), class:"tweets-nickname" %>
+    <%= link_to '削除', tweet_path(tweet.id), method: :destroy %>
     <div class="tweet-text-area">
       <div class="tweet-text">
         <%= tweet.text %>
