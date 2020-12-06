@@ -2,16 +2,21 @@ class Logbook < ApplicationRecord
   belongs_to :area
   has_one_attached :image
 
+  with_options presence: true, format: { with: /\A([01][0-9]|2[0-3]):[0-5][0-9]\Z/ } do
+    validates :entry_time
+    validates :exit_time
+  end
   with_options presence: true do
+    validates :text
+    validates :point
+  end
+
+  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
     validates :start_air
     validates :finish_air
     validates :max_depth
     validates :ave_depth
-    validates :entry_time
-    validates :exit_time
     validates :count
-    validates :text
-    validates :point
   end
 
   validates :text, presence: true, unless: :was_attached?

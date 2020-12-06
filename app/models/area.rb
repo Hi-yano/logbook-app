@@ -6,7 +6,7 @@ class Area < ApplicationRecord
   belongs_to :entry
 
   with_options presence: true do
-    validates :dive_day
+    validates :dive_day, format: { with: /\A[-]?[0-9]+(\.[0-9]+)?\z/ }
     validates :region
   end
   with_options numericality: { other_than: 1 } do
