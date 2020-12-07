@@ -4,7 +4,7 @@ class Entry < ActiveHash::Base
     { id: 2, name: 'ボートダイブ' },
     { id: 3, name: 'ビーチダイブ' },
     { id: 4, name: 'ドリフトダイブ' },
-    { id: 5, name: 'ナイトダイブ' },
+    { id: 5, name: 'ナイトダイブ' }
   ]
 
   include ActiveHash::Associations

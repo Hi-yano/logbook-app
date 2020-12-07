@@ -15,13 +15,13 @@ class Area < ApplicationRecord
   end
 
   def self.search(search, num)
-    if search != ""
+    if search != ''
       if num == 1
-      Area.where('dive_day LIKE(?)', "#{search}-__")
+        Area.where('dive_day LIKE(?)', "#{search}-__")
       elsif num == 2
         Area.where('dive_day LIKE(?)', "20__-#{search}-__")
       elsif num == 3
-        Area.where('dive_day LIKE(?)', "#{search}%")  
+        Area.where('dive_day LIKE(?)', "#{search}%")
       end
     else
       Area.all
