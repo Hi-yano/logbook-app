@@ -27,7 +27,7 @@
 
 .top-log{
   display: flex;
-  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
   margin-left: 20px;
 }
 
