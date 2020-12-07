@@ -35,7 +35,6 @@ describe Area do
         @area.valid?
         expect(@area.errors.full_messages).to include("Entry is not a number")
       end
-    
     end
   end
 end

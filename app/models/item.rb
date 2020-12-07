@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :type
   belongs_to :suitstype
 
-  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
+  with_options presence: true, numericality: true, format: { with: /\A[0-9]+\z/ } do
     validates :thickness
     validates :weight
   end
