@@ -1,5 +1,4 @@
 class ConditionsController < ApplicationController
-
   def new
     @condition = Condition.new
   end
@@ -20,4 +19,3 @@ class ConditionsController < ApplicationController
     params.require(:condition).permit(:weather, :wind, :wave, :tide_id, :temperature, :water_temperature).merge(area_id: params[:area_id])
   end
 end
-

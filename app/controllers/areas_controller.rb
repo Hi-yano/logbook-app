@@ -13,7 +13,6 @@ class AreasController < ApplicationController
     end
   end
 
-
   def destroy
     area = Area.find(params[:id])
     if current_user.id == area.user_id

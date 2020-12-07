@@ -12,7 +12,7 @@ class Month < ActiveHash::Base
     { id: 10, name: '09' },
     { id: 11, name: '10' },
     { id: 12, name: '11' },
-    { id: 13, name: '12' },
+    { id: 13, name: '12' }
   ]
 
   include ActiveHash::Associations

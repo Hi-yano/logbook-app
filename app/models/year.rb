@@ -31,7 +31,7 @@ class Year < ActiveHash::Base
     { id: 29, name: '2047' },
     { id: 30, name: '2048' },
     { id: 31, name: '2049' },
-    { id: 32, name: '2050' },
+    { id: 32, name: '2050' }
   ]
 
   include ActiveHash::Associations
