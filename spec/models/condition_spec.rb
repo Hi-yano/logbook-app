@@ -33,7 +33,7 @@ describe Condition do
       it '波の情報が半角数字であること' do
         @condition.wave = '１２３あいう'
         @condition.valid?
-        expect(@condition.errors.full_messages).to include("Wave is not a number")
+        expect(@condition.errors.full_messages).to include('Wave is not a number')
       end
 
       it '風の情報が空で無いこと' do
@@ -45,7 +45,7 @@ describe Condition do
       it '波の情報が半角数字であること' do
         @condition.wind = '１２３あいう'
         @condition.valid?
-        expect(@condition.errors.full_messages).to include("Wind is not a number")
+        expect(@condition.errors.full_messages).to include('Wind is not a number')
       end
 
       it '気温の情報が空で無いこと' do
@@ -57,7 +57,7 @@ describe Condition do
       it '気温の情報が半角数字であること' do
         @condition.temperature = '１２３あいう'
         @condition.valid?
-        expect(@condition.errors.full_messages).to include("Temperature is not a number")
+        expect(@condition.errors.full_messages).to include('Temperature is not a number')
       end
 
       it '水温の情報が空で無いこと' do
@@ -69,15 +69,14 @@ describe Condition do
       it '水温の情報が半角数字であること' do
         @condition.water_temperature = '１２３あいう'
         @condition.valid?
-        expect(@condition.errors.full_messages).to include("Water temperature is not a number")
+        expect(@condition.errors.full_messages).to include('Water temperature is not a number')
       end
 
       it '潮流の情報が空で無いこと' do
         @condition.tide_id = '1'
         @condition.valid?
-        expect(@condition.errors.full_messages).to include("Tide must be other than 1")
+        expect(@condition.errors.full_messages).to include('Tide must be other than 1')
       end
     end
   end
 end
-

@@ -21,7 +21,7 @@ describe Area do
       it '日付情報は半角英数字であること' do
         @area.dive_day = '２０２０-０２-０２'
         @area.valid?
-        expect(@area.errors.full_messages).to include("Dive day is invalid")
+        expect(@area.errors.full_messages).to include('Dive day is invalid')
       end
 
       it '地域情報が空だと保存できないこと' do
@@ -29,11 +29,11 @@ describe Area do
         @area.valid?
         expect(@area.errors.full_messages).to include("Region can't be blank")
       end
-    
+
       it '地域情報が空だと保存できないこと' do
         @area.entry_id = ''
         @area.valid?
-        expect(@area.errors.full_messages).to include("Entry is not a number")
+        expect(@area.errors.full_messages).to include('Entry is not a number')
       end
     end
   end

@@ -36,7 +36,6 @@ describe Logbook do
         expect(@logbook.errors.full_messages).to include("Exit time can't be blank")
       end
 
-
       it 'テキスト情報が空であること' do
         @logbook.text = ''
         @logbook.valid?
@@ -58,7 +57,7 @@ describe Logbook do
       it 'スタート残圧の情報が半角数字でないこと' do
         @logbook.start_air = 'あいう１２３'
         @logbook.valid?
-        expect(@logbook.errors.full_messages).to include("Start air is not a number")
+        expect(@logbook.errors.full_messages).to include('Start air is not a number')
       end
 
       it 'エキジット残圧の情報が空であること' do
@@ -70,7 +69,7 @@ describe Logbook do
       it 'エキジット残圧の情報が半角数字でないこと' do
         @logbook.finish_air = 'あいう１２３'
         @logbook.valid?
-        expect(@logbook.errors.full_messages).to include("Finish air is not a number")
+        expect(@logbook.errors.full_messages).to include('Finish air is not a number')
       end
 
       it '最大水深情報が空であること' do
@@ -82,7 +81,7 @@ describe Logbook do
       it '最大水深の情報が半角数字でないこと' do
         @logbook.max_depth = 'あいう１２３'
         @logbook.valid?
-        expect(@logbook.errors.full_messages).to include("Max depth is not a number")
+        expect(@logbook.errors.full_messages).to include('Max depth is not a number')
       end
 
       it '平均水深の情報が空であること' do
@@ -94,7 +93,7 @@ describe Logbook do
       it '平均水深の情報が半角数字でないこと' do
         @logbook.ave_depth = 'あいう１２３'
         @logbook.valid?
-        expect(@logbook.errors.full_messages).to include("Ave depth is not a number")
+        expect(@logbook.errors.full_messages).to include('Ave depth is not a number')
       end
 
       it 'カウントの情報が空であること' do
@@ -106,7 +105,7 @@ describe Logbook do
       it 'カウントの情報が半角数字でないこと' do
         @logbook.count = 'あいう１２３'
         @logbook.valid?
-        expect(@logbook.errors.full_messages).to include("Count is not a number")
+        expect(@logbook.errors.full_messages).to include('Count is not a number')
       end
     end
   end

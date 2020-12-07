@@ -21,7 +21,7 @@ describe Item do
       it 'スーツの厚み情報が半角数字であること' do
         @item.thickness = '１２３あいう'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Thickness is not a number")
+        expect(@item.errors.full_messages).to include('Thickness is not a number')
       end
 
       it 'ウエイト情報が空であること' do
@@ -33,25 +33,25 @@ describe Item do
       it 'ウエイト情報が半角数字であること' do
         @item.weight = '１２３あいう'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Weight is not a number")
+        expect(@item.errors.full_messages).to include('Weight is not a number')
       end
 
       it 'スーツタイプが１であること' do
         @item.suitstype_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Suitstype must be other than 1")
+        expect(@item.errors.full_messages).to include('Suitstype must be other than 1')
       end
 
       it 'タンク容量が１であること' do
         @item.capacity_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Capacity must be other than 1")
+        expect(@item.errors.full_messages).to include('Capacity must be other than 1')
       end
 
       it 'タンクタイプが１であること' do
         @item.type_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Type must be other than 1")
+        expect(@item.errors.full_messages).to include('Type must be other than 1')
       end
     end
   end
