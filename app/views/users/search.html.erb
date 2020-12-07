@@ -1,9 +1,7 @@
 <%= render "shared/mypage" %>
 <main>
   <div class="main">
-    <div class="main-left">
-    </div>
-      <div class="main-center">
+    <div class="logbook-center">
       <div class="day-list">
       <% @areas.each do |area| %>
         <div class="day-point">
@@ -14,10 +12,6 @@
         </div>
       <% end %>
       </div>
-      </div>
-      <div class="condition-logbook">
-      </div>
-    <div class="main-right">
     </div>
   </div>
 </main>
