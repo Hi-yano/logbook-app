@@ -3,6 +3,7 @@
   <h3>投稿する</h3>
   <div class="container">
       <%= form_with(model: @tweet, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
         <%= f.file_field :image, id:"log-image" %>
       <div class="tweets-area">
         <%= f.text_area :text, placeholder: "ポイントの感想など", rows: "10" %>

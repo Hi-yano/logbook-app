@@ -11,7 +11,7 @@ class Logbook < ApplicationRecord
     validates :point
   end
 
-  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
+  with_options presence: true, numericality: true, format: { with: /\A[0-9]+\z/ } do
     validates :start_air
     validates :finish_air
     validates :max_depth

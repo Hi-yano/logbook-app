@@ -6,6 +6,7 @@
 
   <div class="area-center">
   <%= form_with(model: @area, url: areas_path, local: true) do |f| %>
+  <%# エラーメッセージ <%= render 'shared/error_messages', model: f.object %>
   <div class="form">
     <h2>area</h2>
     <div>

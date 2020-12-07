@@ -6,6 +6,7 @@
   <div class="area-center">
   <h3 class="log-title">ログを入力</h3>
   <%= form_with(model: @logbook, url: area_logbooks_path, local: true) do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="log-form">
     <div class="left-form">
       <p>point</P>
