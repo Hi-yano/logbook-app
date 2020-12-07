@@ -26,8 +26,6 @@ body {
 }
 
 .image-area{
-  width: 500px;
-  margin-top: 2vh;
   padding-left: 10vw;
 }
 
@@ -45,4 +43,15 @@ body {
   font-size: 13px;
   display: block;
   color: #aaa;
+}
+
+.edit-destroy{
+  width: 50%;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.logbook-log-text{
+  margin-top: 10px;
 }

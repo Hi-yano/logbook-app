@@ -1,5 +1,5 @@
 class Logbook < ApplicationRecord
-  belongs_to :area
+  belongs_to :area, dependent: :destroy
   has_one_attached :image
 
   with_options presence: true do

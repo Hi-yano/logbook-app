@@ -69,6 +69,10 @@
           <div class="lists-log">
             <p class="log-span">タンク容量</p><%= @all.item.capacity.name %>/L
           </div>
+          <% if @all.logbook.image.attached? %>
+          <p>Photo</p>
+          <%= image_tag @all.logbook.image.variant(resize: '500x500'), class: 'logbook-image' %>
+          <% end %><%# else 後でダミー画像おく %>
           </ul>
           <% else %>
           <Ul>
@@ -78,11 +82,6 @@
         </ul>
         <div class="image-area">
         <% if @all.logbook.present? %>
-          <% if @all.logbook.image.attached? %>
-          <p>Photo</p>
-          <%= image_tag @all.logbook.image.variant(resize: '500x500'), class: 'logbook-image' %>
-          <% end %><%# else 後でダミー画像おく %>
-        </div>
       </div>
         <ul class="logbook-log">
           <h3>記録</h3>
@@ -113,8 +112,12 @@
           <div class="lists-log">
             <p class="log-span">平均深度</p><%= @all.logbook.ave_depth %>/m
           </div>
-          <div class="logbook-log">
-            <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p><%= @all.logbook.text %>
+          <div class="logbook-log-text">
+            <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p>
+            <%= @all.logbook.text %>
+          </div>
+          <div class="delete-btn">
+            <%= link_to '削除', area_path(params[:area_id]), method: :delete, class: "tweets-nickname" %>
           </div>
         </ul>
         <% else %>

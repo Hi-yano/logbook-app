@@ -13,9 +13,16 @@
 }
 
 .logbook-log{
-  margin-top: 10px;
+  margin-top: 2vh;
   margin-bottom: 30px;
   margin-left: 20px;
+  position: relative;
+}
+
+.delete-btn{
+  position: absolute;
+  bottom: 0;
+  margin-left: 20vw;
 }
 
 .top-log{

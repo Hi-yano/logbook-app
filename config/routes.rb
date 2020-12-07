@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :areas, only: [:new, :create] do
+  resources :areas, only: [:new, :create, :destroy] do
     resources :conditions, only: [:new, :create]
     resources :items,      only: [:new, :create]
     resources :logbooks,   only: [:index, :new, :create]

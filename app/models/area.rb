@@ -1,8 +1,8 @@
 class Area < ApplicationRecord
   belongs_to :user
-  has_one    :condition
-  has_one    :item
-  has_one    :logbook
+  has_one    :condition, dependent: :destroy
+  has_one    :item, dependent: :destroy
+  has_one    :logbook, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :entry
 

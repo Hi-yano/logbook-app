@@ -117,3 +117,8 @@ header {
   width: 30px;
   margin-right: 2vw;
 }
+
+.second-right{
+  display: flex;
+  align-items: center;
+}

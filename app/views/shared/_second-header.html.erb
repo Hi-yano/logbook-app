@@ -8,11 +8,13 @@
       <% end %>
     </div>
   </div>
-    <div class="right-contents">
-      <div class="nav">
-        <ul class="lists-right">
-          <p class="new-logbook">ログブック入力ページ</p>
-        </ul>
+        <div class="second-right">
+      <div class="right-contents">
+          <ul class="lists-right">
+            <li class="icon-area"><%= link_to image_tag("logbook-icon.png", class:"right-icon"), new_area_path %></li>
+            <li class="icon-area"><%= link_to image_tag("tweet-icon.png", class:"right-icon"), new_tweet_path %></li>
+            <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), user_path(current_user.id) %></li>
+          </ul>
       </div>
     </div>
   </div>

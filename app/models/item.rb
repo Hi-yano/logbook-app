@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :area
+  belongs_to :area, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :capacity
   belongs_to :type
