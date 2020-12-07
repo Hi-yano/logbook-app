@@ -1,4 +1,4 @@
-<header class="top-page-header">
+<header class="my-page-header">
   <div class="top-page-contents">
     <div class="left-contents">
       <div class="top-icon">
@@ -7,16 +7,14 @@
         さんのマイページ
       </div>
     </div>
-    <div>
+    <div class="right">
       <div class="right-contents">
-        <div class="nav">
+          <%= render "shared/search" %>
           <ul class="lists-right">
-            <li><%= link_to 'ログブックの入力', new_area_path, class: "logbook" %></li>
-            <li><%= link_to 'マイページ', user_path(current_user.id), class: "logbook" %>
+            <li class="icon-area"><%= link_to image_tag("logbook-icon.png", class:"right-icon"), new_area_path %></li>
+            <li class="icon-area"><%= link_to image_tag("tweet-icon.png", class:"right-icon"), new_tweet_path %></li>
+            <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), user_path(current_user.id) %></li>
           </ul>
-        </div>
-        <%# 検索機能の呼び出し %>
-        <%= render "shared/search" %>
       </div>
     </div>
   </div>

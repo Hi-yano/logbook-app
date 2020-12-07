@@ -13,6 +13,17 @@ class AreasController < ApplicationController
     end
   end
 
+
+  def destroy
+    area = Area.find(params[:id])
+    if current_user.id == area.user_id
+      area.destroy
+      redirect_to user_path(current_user.id)
+    else
+      render :index
+    end
+  end
+
   private
 
   def area_params

@@ -1,0 +1,13 @@
+<%= render "shared/mypage" %>
+<div class="contents-row">
+  <h3>投稿する</h3>
+  <div class="container">
+      <%= form_with(model: @tweet, local: true) do |f| %>
+        <%= f.file_field :image, id:"log-image" %>
+      <div class="tweets-area">
+        <%= f.text_area :text, placeholder: "ポイントの感想など", rows: "10" %>
+        </div>
+        <%= f.submit "SEND" %>
+      <% end %>
+  </div>
+</div>

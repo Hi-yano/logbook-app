@@ -1,0 +1,35 @@
+.tweet-list{
+  margin: 0 auto;
+  background-color: #FCFCFC;
+  width: 80vh;
+  position: relative;
+}
+
+.tweet-content{
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+}
+
+.tweet-text{
+  width: 500px;
+  overflow: scroll;
+  padding: 5px;
+  box-shadow: 0px  1px 5px -2px gray inset;
+  height: 100px;
+}
+
+.tweet-image-area{
+  margin-top: 20px;
+}
+
+.tweet-image{
+  border-radius: 10px;
+}
+
+.tweets-nickname{
+  font-size: 11px;
+  color: gray;
+}

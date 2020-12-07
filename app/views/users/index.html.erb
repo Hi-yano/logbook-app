@@ -22,10 +22,12 @@
       <% end %>
     </div>
   </div>
+  <% if @all.present? %>
     <div class="logbook-list">
       <div class="top-log">
         <ul class="condition-log">
           <h3>コンディション</h3>
+          <% if @all.condition.present? %>
           <div class="lists-log">
             <p class="log-span">天気</p><%= @all.condition.weather %>
           </div>
@@ -45,64 +47,90 @@
             <p class="log-span">潮流</p><%= @all.condition.tide.name %>
           </div>
           <ul class="item-log">
-          <h3>装備品</h3>
-          <div class="lists-log">
-            <p class="log-span">スーツ</p><%= @item.suitstype.name %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">厚み</p><%= @item.thickness %>/mm
-          </div>
-          <div class="lists-log">
-            <p class="log-span">ウエイト</p><%= @item.weight %>/kg
-          </div>
-          <div class="lists-log">
-            <p class="log-span">タンクタイプ</p><%= @item.type.name %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">タンク容量</p><%= @item.capacity.name %>/L
-          </div>
+          <% else %>
+          <Ul>
+          <div> No data </div>
           </ul>
+          <% end %>
+          <h3>装備品</h3>
+          <% if @all.item.present? %>
+          <div class="lists-log">
+            <p class="log-span">スーツ</p><%= @all.item.suitstype.name %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">厚み</p><%= @all.item.thickness %>/mm
+          </div>
+          <div class="lists-log">
+            <p class="log-span">ウエイト</p><%= @all.item.weight %>/kg
+          </div>
+          <div class="lists-log">
+            <p class="log-span">タンクタイプ</p><%= @all.item.type.name %>
+          </div>
+          <div class="lists-log">
+            <p class="log-span">タンク容量</p><%= @all.item.capacity.name %>/L
+          </div>
+          <% if @all.logbook.image.attached? %>
+          <p>Photo</p>
+          <%= image_tag @all.logbook.image.variant(resize: '500x500'), class: 'logbook-image' %>
+          <% end %><%# else 後でダミー画像おく %>
+          </ul>
+          <% else %>
+          <Ul>
+          <div> No data </div>
+          </ul>
+          <% end %>
         </ul>
         <div class="image-area">
-          <p>Photo</p>
-          <%= image_tag @logbook.image.variant(resize: '500x500'), class: 'logbook-image' if @logbook.image.attached? %>
-        </div>
+        <% if @all.logbook.present? %>
       </div>
         <ul class="logbook-log">
           <h3>記録</h3>
           <div class="lists-log">
-            <p class="log-span">本数</p><%= @logbook.count %>/本目
+            <p class="log-span">本数</p><%= @all.logbook.count %>/本目
           </div>
           <div class="lists-log">
             <p class="log-span">エントリー方法</p><%= @all.entry.name %>
           </div>
           <div class="lists-log">
-            <p class="log-span">ポイント</p><%= @logbook.point %>
+            <p class="log-span">ポイント</p><%= @all.logbook.point %>
           </div>
           <div class="lists-log">
-            <p class="log-span">エントリータイム</p><%= @logbook.entry_time.strftime('%H:%M') %>
+            <p class="log-span">エントリータイム</p><%= @all.logbook.entry_time.strftime('%H:%M') %>
           </div>
           <div class="lists-log">
-            <p class="log-span">エキジットタイム</p><%= @logbook.exit_time.strftime('%H:%M') %>
+            <p class="log-span">エキジットタイム</p><%= @all.logbook.exit_time.strftime('%H:%M') %>
           </div>          
           <div class="lists-log">
-            <p class="log-span">スタート（残圧）</p><%= @logbook.start_air %>/bar
+            <p class="log-span">スタート（残圧）</p><%= @all.logbook.start_air %>/bar
           </div>
           <div class="lists-log">
-            <p class="log-span">エキジット（残圧）</p><%= @logbook.finish_air %>/bar
+            <p class="log-span">エキジット（残圧）</p><%= @all.logbook.finish_air %>/bar
           </div>
           <div class="lists-log">
-            <p class="log-span">最大深度</p><%= @logbook.max_depth %>/m
+            <p class="log-span">最大深度</p><%= @all.logbook.max_depth %>/m
           </div>
           <div class="lists-log">
-            <p class="log-span">平均深度</p><%= @logbook.ave_depth %>/m
+            <p class="log-span">平均深度</p><%= @all.logbook.ave_depth %>/m
           </div>
-          <div class="logbook-log">
-            <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p><%= @logbook.text %>
+          <div class="logbook-log-text">
+            <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p>
+            <%= @all.logbook.text %>
+          </div>
+          <div class="delete-btn">
+            <%= link_to '削除', area_path(params[:area_id]), method: :delete, class: "tweets-nickname" %>
           </div>
         </ul>
+        <% else %>
+          <Ul>
+          <p>記録</p>
+          <div> No data </div>
+          </ul>
+        <% end %>
       </div>
     </div>
   </div>
+  <% else %>
+  <p> no data </p>
+  <% end %>
 </div>
 </main>

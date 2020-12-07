@@ -1,6 +1,7 @@
 class LogbooksController < ApplicationController
   
   def index
+    @tweets = Tweet.all
   end
 
   def new
@@ -10,7 +11,7 @@ class LogbooksController < ApplicationController
   def create
     logbook = Logbook.new(logbook_params)
     if logbook.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       redirect_to new_area_logbook_path
     end

@@ -1,8 +1,10 @@
+<%= render "shared/header" %>
 <div class="login-main">
   <div class="main-left">
   </div>
   <div class="login-group">
     <div class="login-center">
+    <h1>Sign UP</h1>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
       
@@ -32,11 +34,6 @@
         <div class="actions">
           <%= f.submit "Sign up" %>
         </div>
-      <% end %>
-          </div>
-    <div class="change-signup">
-      <%- if controller_name != 'sessions' %>
-        <%= link_to "Log in", new_session_path(resource_name) %><br />
       <% end %>
     </div>
   </div>

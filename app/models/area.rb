@@ -1,12 +1,13 @@
 class Area < ApplicationRecord
   belongs_to :user
-  has_one    :condition
-  has_one    :equipment
+  has_one    :condition, dependent: :destroy
+  has_one    :item, dependent: :destroy
+  has_one    :logbook, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :entry
 
   with_options presence: true do
-    validates :dive_day
+    validates :dive_day, format: { with: /\A\d{4}-\d{2}-\d{2}\z/ }
     validates :region
   end
   with_options numericality: { other_than: 1 } do

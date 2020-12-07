@@ -13,8 +13,13 @@ header {
   height: 70px;
   width: 100vw;
   padding: 1vh 5vw;
-  display: flex;
-  flex-direction: column;
+}
+
+.my-page-header{
+  box-shadow: 0px  1px 5px -2px gray inset;
+  height: 70px;
+  width: 100vw;
+  padding: 1vh 0 0 5vw;
 }
 
 .top-page-contents{
@@ -22,8 +27,20 @@ header {
   justify-content: space-between;
 }
 
+.right{
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+
+.header-right{
+  display: flex;
+  align-items: center;
+}
+
 .right-contents{
   height: 30px;
+  display: flex;
 }
 
 .top-icon{
@@ -40,13 +57,7 @@ header {
   padding-top: 25px;
 }
 
-.nav {
-  font-size: 18px;
-}
-
 .lists-right {
-  list-style: none;
-  align-items: flex-end;
   display: flex;
 }
 
@@ -66,6 +77,7 @@ header {
 
 .sign-up {
   text-decoration: none;
+  line-height: 32px;
   color: #333333;
 }
 
@@ -99,4 +111,14 @@ header {
   height: 30px;
   display: block;
   margin-right: 3vw;
+}
+
+.right-icon{
+  width: 30px;
+  margin-right: 2vw;
+}
+
+.second-right{
+  display: flex;
+  align-items: center;
 }
