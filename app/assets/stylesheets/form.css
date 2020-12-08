@@ -1,0 +1,14 @@
+.text-form{
+  margin-top: 10px;
+  width: 30vw;
+  height: 20vh;
+}
+
+.submit-send-btn{
+  width: 10vw;
+  border: none;
+  border-radius: 3px;
+  background-color: #FFD800;
+  box-shadow: 0px  0px 3px 1px lightgray;
+  color: white;
+}
