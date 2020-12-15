@@ -6,8 +6,10 @@
         <%= f.file_field :image, id:"log-image" %>
       <div class="tweets-area">
         <%= f.text_area :text, placeholder: "ポイントの感想など", rows: "10", class: "text-area" %>
-        </div>
+      </div>
+      <div class="submit">
         <%= f.submit "SEND", class: "submit-send-btn" %>
+      </div>
       <% end %>
   </div>
 </div>

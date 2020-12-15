@@ -1,7 +1,7 @@
         <div class="search" style="text-align: right">
         <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
-          日付検索：<%= form.collection_select(:year, Year.all, :name, :name ) %>
-          <%= form.collection_select(:month, Month.all, :name, :name ) %>
+          日付検索：<%= form.collection_select(:year, Year.all, :name, :name, class: "year-form") %>
+          <%= form.collection_select(:month, Month.all, :name, :name, class: "month-form" ) %>
           <%= form.submit "検索", class: "search-btn" %>
         <% end %>
         </div>

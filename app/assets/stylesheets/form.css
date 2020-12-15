@@ -14,11 +14,28 @@
   margin-top: 30px;
 }
 
+.submit-send-btn:hover{
+  width: 10vw;
+  border: none;
+  border-radius: 3px;
+  background-color: #FFE558;
+  box-shadow: 0px  0px 3px 1px lightgray;
+  color: white;
+  margin-top: 30px;
+}
+
 .text-area{
-  width:  1000px;
+  width:  500px;
   height: 200px;
+  margin-top: 10px;
 }
 
 .title{
   text-align: center;
+  margin: 10px;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
 }
