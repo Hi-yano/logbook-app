@@ -116,9 +116,6 @@
             <p class="border">備考（一緒に潜ったバディ・発見した水中生物など）</p>
             <%= @all.logbook.text %>
           </div>
-          <div class="delete-btn">
-            <%= link_to '削除', area_path(params[:area_id]), method: :delete, class: "tweets-nickname" %>
-          </div>
         </ul>
         <% else %>
           <Ul>
@@ -126,6 +123,9 @@
           <div> No data </div>
           </ul>
         <% end %>
+      </div>
+      <div class="delete-btn">
+        <%= link_to 'ログの削除', area_path(params[:area_id]), method: :delete, class: "tweets-nickname" %>
       </div>
     </div>
   </div>
