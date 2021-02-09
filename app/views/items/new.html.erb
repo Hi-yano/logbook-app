@@ -10,24 +10,25 @@
   <%= form_with(model: @item, url: area_items_path, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="form">
+    <h2>装備品</h2>
     <div>
-      <p>厚み</P>
-      <%= f.text_field :thickness, placeholder:"例）5" %>
-    </div>
-    <div>
-      <p>type</P>
+      <p>スーツタイプ</P>
       <%= f.collection_select(:suitstype_id, Suitstype.all, :id, :name, {}) %>
     </div>
     <div>
-      <p>weight</P>
+      <p>スーツの厚さ</P>
+      <%= f.text_field :thickness, placeholder:"例）5" %>
+    </div>
+    <div>
+      <p>ウエイト</P>
       <%= f.text_field :weight, placeholder:"例）5" %>
     </div>
     <div>
-      <p>tank_cap</P>
+      <p>タンク容量</P>
       <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}) %>
     </div>
     <div>
-      <p>tank_type</P>
+      <p>タンクタイプ</P>
       <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
     </div>
     <%= f.submit "次へ", class:"sell-btn" %>
