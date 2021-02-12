@@ -9,7 +9,7 @@
   <%= form_with(model: @condition, url: area_conditions_path, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="form">
-    <h2>コンディション</h2>
+    <h2 class="sub-title">コンディション</h2>
     <div>
       <p>weather</P>
       <%= f.text_field :weather, placeholder:"例）晴れ" %>
@@ -34,7 +34,7 @@
       <p>water_temperature</P>
       <%= f.text_field :water_temperature, placeholder:"例）23" %>
     </div>
-  <%= f.submit "次へ", class:"sell-btn" %>
+  <%= f.submit "次へ", class:"submit-send-btn" %>
   </div>
 <% end %>
 </div>

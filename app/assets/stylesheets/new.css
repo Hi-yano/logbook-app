@@ -29,13 +29,12 @@
 .form{
   display: grid;
   place-items: center;
-  margin-top: 50px;
+  margin-top: 10vh;
 }
 
 .log-form{
   display: flex;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .left-form{
@@ -53,7 +52,8 @@
 }
 
 .log-title{
-  margin-top: 50px;
+  margin-top: 10vh;
+  margin-bottom: 20px;
   text-align: center;
   flex-wrap: wrap;
 }

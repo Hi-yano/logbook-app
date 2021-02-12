@@ -10,7 +10,7 @@
   <%= form_with(model: @item, url: area_items_path, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="form">
-    <h2>装備品</h2>
+    <h2 class="sub-title">装備品</h2>
     <div>
       <p>スーツタイプ</P>
       <%= f.collection_select(:suitstype_id, Suitstype.all, :id, :name, {}) %>
@@ -31,7 +31,7 @@
       <p>タンクタイプ</P>
       <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
     </div>
-    <%= f.submit "次へ", class:"sell-btn" %>
+    <%= f.submit "次へ", class:"submit-send-btn" %>
   </div>
   <% end %>
   </div>

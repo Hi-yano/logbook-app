@@ -8,7 +8,7 @@
   <%= form_with(model: @area, url: areas_path, local: true) do |f| %>
   <%# エラーメッセージ <%= render 'shared/error_messages', model: f.object %>
   <div class="form">
-    <h2>日付 / ダイブポイント</h2>
+    <h2 class="sub-title">日付 / ダイブポイント</h2>
     <div>
       <p>date</P>
       <%= f.text_field :dive_day, placeholder:"例）2020-08-01" %>
@@ -21,7 +21,7 @@
       <p>entry</P>
       <%= f.collection_select(:entry_id, Entry.all, :id, :name, {}) %>
     </div>
-    <%= f.submit "次へ", class:"sell-btn" %>
+    <%= f.submit "次へ", class:"submit-send-btn" %>
     </div>
   <% end %>
   </div>
