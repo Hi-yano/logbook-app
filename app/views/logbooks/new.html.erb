@@ -4,7 +4,7 @@
   <div class="area-left">
   </div>
   <div class="area-center">
-  <h3 class="log-title">ログを入力</h3>
+  <h2 class="log-title">ログを入力</h2>
   <%= form_with(model: @logbook, url: area_logbooks_path, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
   <div class="log-form">
@@ -36,7 +36,7 @@
         <%= f.file_field :image, id:"log-image" %>
     </div>
     <div class="log-submit">
-      <%= f.submit "記録する", class:"sell-btn" %>
+      <%= f.submit "記録する", class:"submit-send-btn" %>
     </div>
   <% end %>
   </div>

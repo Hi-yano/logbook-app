@@ -2,7 +2,7 @@
 <div class="signup-main">
   <div class="login-group">
     <div class="login-center">
-    <h1>Sign UP</h1>
+    <h1>新規登録</h1>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
       
@@ -30,7 +30,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up" %>
+          <%= f.submit "Sign up", class:"submit-send-btn" %>
         </div>
       <% end %>
     </div>

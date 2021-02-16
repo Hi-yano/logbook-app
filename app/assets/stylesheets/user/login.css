@@ -1,20 +1,4 @@
-.login-main{
-  display: flex;
-  height: calc(100vh - 20px - 90px);
-}
-
-.login-group{
-  width: calc(100vw - 15vw - 15vw);
-  display: grid;
-  place-items: center;
-}
-
-.login-center{
-  margin-bottom: 50px;
-}
-
 .actions{
-  margin-top: 50px;
   display: grid;
   place-items: center;
 }
@@ -24,6 +8,6 @@
   text-align: center;
 }
 
-.login-image{
-  background-size: cover;
+.login-center{
+  text-align: center;
 }

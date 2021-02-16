@@ -1,6 +1,6 @@
-<%= render "shared/mypage" %>
+<%= render "shared/second-header" %>
 <div class="contents-row">
-  <h3>投稿する</h3>
+  <h3 class="tweet-title">投稿する</h3>
   <div class="container">
       <%= form_with(model: @tweet, local: true) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>

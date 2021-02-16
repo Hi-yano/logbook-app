@@ -1,24 +1,22 @@
 <%= render "shared/header" %>
-<%= image_tag("signin-top.jpg", class:"login-image") %>
 <div class="login-main">
-  <div class="login-group">
-    <div class="login-center">
-    <h1>Log IN</h1>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+  <div class="login-center">
+    <%# <%= image_tag("signin-top.jpg", class:"login-image") %>
+      <h1>ログイン</h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
 
-        <div class="actions">
-          <%= f.submit "Log in" %>
-        </div>
-      <% end %>
-    </div>
+      <div class="actions">
+        <%= f.submit "Log in", class:"submit-send-btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
