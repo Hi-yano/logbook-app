@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: logbook_app_production
-  username: logbook_app
-  password: <%= ENV['LOGBOOK_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
