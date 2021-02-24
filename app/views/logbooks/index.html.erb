@@ -1,28 +1,8 @@
-<header class="my-page-header">
-  <div class="top-page-contents">
-    <div class="left-contents">
-      <div class="top-icon">
-        <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
-        <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
-        さんのマイページ
-      </div>
-    </div>
-    <div class="right">
-      <div class="right-contents">
-          <%= render "shared/search" %>
-          <ul class="lists-right">
-            <li class="icon-area"><%= link_to image_tag("logbook-icon.png", class:"right-icon"), user_path(current_user.id) %>
-            <li class="icon-area"><%= link_to image_tag("tweet-icon.png", class:"right-icon"), root_path %>
-            <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), user_path(current_user.id) %></li>
-          </ul>
-      </div>
-    </div>
-  </div>
-</header>
+<%= render "shared/header" %>
 <main>
   <div class="area">
     <div class="main">
-      <%= render "shared/tweet" %>
+      トップページ
     </div>
   </div>
 </main>

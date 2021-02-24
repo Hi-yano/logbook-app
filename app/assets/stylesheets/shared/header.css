@@ -60,48 +60,6 @@ header {
   display: flex;
 }
 
-.logout {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.sign-up {
-  text-decoration: none;
-  line-height: 32px;
-  color: #333333;
-}
-
-.logbook {
-  text-decoration: none;
-  color: #333333;
-  margin-right: 3vw;
-}
-
-.logbook:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.logout:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.login:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.sign-up:hover {
-  border-bottom: solid 3px #013763;
-}
-
 .logdivers-color{
   width: 150px;
 }

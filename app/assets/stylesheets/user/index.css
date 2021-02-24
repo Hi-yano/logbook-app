@@ -54,6 +54,13 @@
 }
 
 .head-text{
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  margin: 0 20px;
+}
+
+.session-text{
   color: white;
   text-decoration: none;
   list-style: none;
@@ -61,6 +68,5 @@
 }
 
 .head-list{
-  padding-left: 5vw;
-  display: flex;
+  text-align: right;
 }
