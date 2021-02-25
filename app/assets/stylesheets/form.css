@@ -20,3 +20,8 @@
   justify-content: center;
   text-align: center;
 }
+
+.form-field{
+  width: 200px;
+  height: 30px;
+}

@@ -2,7 +2,7 @@
   <div class="top-page-contents">
     <div class="left-contents">
       <div class="top-icon">
-        <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
+        <%= link_to image_tag("toplogo.png", class:"log-icon"), "/" %>
         <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
         さんのマイページ
       </div>
@@ -11,11 +11,15 @@
       <div class="right-contents">
           <%= render "shared/search" %>
           <ul class="lists-right">
-            <li class="icon-area"><%= link_to image_tag("logbook-icon.png", class:"right-icon"), new_area_path %></li>
-            <li class="icon-area"><%= link_to image_tag("tweet-icon.png", class:"right-icon"), new_tweet_path %></li>
-            <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), user_path(current_user.id) %></li>
+            <li class="icon-area"><%= link_to image_tag("logbook-icon.png", class:"right-icon"), user_path(current_user.id) %>
+            <li class="icon-area"><%= link_to image_tag("tweet-icon.png", class:"right-icon"), tweets_path %>
           </ul>
       </div>
     </div>
   </div>
 </header>
+<div class="head-group">
+  <ul class="head-list">
+    <li><%= link_to "トップページ", root_path, class:"session-text" %></li>
+  </ul>
+</div>

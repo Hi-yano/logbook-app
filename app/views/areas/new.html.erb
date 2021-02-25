@@ -11,15 +11,15 @@
     <h2 class="sub-title">日付 / ダイブポイント</h2>
     <div>
       <p>date</P>
-      <%= f.text_field :dive_day, placeholder:"例）2020-08-01" %>
+      <%= f.text_field :dive_day, placeholder:"例）2020-08-01", class: "form-field" %>
     </div>
     <div>
       <p>area</P>
-      <%= f.text_field :region, placeholder:"例）石垣島" %>
+      <%= f.text_field :region, placeholder:"例）石垣島", class: "form-field" %>
     </div>
     <div>
       <p>entry</P>
-      <%= f.collection_select(:entry_id, Entry.all, :id, :name, {}) %>
+      <%= f.collection_select(:entry_id, Entry.all, :id, :name, {}, class: "form-field") %>
     </div>
     <%= f.submit "次へ", class:"submit-send-btn" %>
     </div>

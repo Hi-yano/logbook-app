@@ -12,27 +12,27 @@
     <h2 class="sub-title">コンディション</h2>
     <div>
       <p>weather</P>
-      <%= f.text_field :weather, placeholder:"例）晴れ" %>
+      <%= f.text_field :weather, placeholder:"例）晴れ", class: "form-field" %>
     </div>
     <div>
       <p>wind</P>
-      <%= f.text_field :wind, placeholder:"例）3" %>
+      <%= f.text_field :wind, placeholder:"例）3", class: "form-field" %>
     </div>
     <div>
       <p>wave</P>
-      <%= f.text_field :wave, placeholder:"例）0.5" %>
+      <%= f.text_field :wave, placeholder:"例）0.5", class: "form-field" %>
     </div>
     <div>
       <p>tide</P>
-      <%= f.collection_select(:tide_id, Tide.all, :id, :name, {}) %>
+      <%= f.collection_select(:tide_id, Tide.all, :id, :name, {}, class: "form-field") %>
     </div>
     <div>
       <p>temperature</P>
-      <%= f.text_field :temperature, placeholder:"例）28" %>
+      <%= f.text_field :temperature, placeholder:"例）28", class: "form-field" %>
     </div>
     <div>
       <p>water_temperature</P>
-      <%= f.text_field :water_temperature, placeholder:"例）23" %>
+      <%= f.text_field :water_temperature, placeholder:"例）23", class: "form-field" %>
     </div>
   <%= f.submit "次へ", class:"submit-send-btn" %>
   </div>

@@ -53,5 +53,8 @@ body {
 }
 
 .sub-title{
-  margin-bottom: 20px;
+  border-bottom: solid 3px #013763;
+  width: 170px;
+  text-align: center;
+  margin: 50px auto 20px auto;
 }

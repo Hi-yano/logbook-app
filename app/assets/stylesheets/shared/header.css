@@ -12,7 +12,7 @@ header {
   box-shadow: 0px  1px 5px -2px gray inset;
   height: 70px;
   width: 100vw;
-  padding: 1vh 5vw;
+  padding: 1vh 0 0 5vw;
 }
 
 .my-page-header{
@@ -30,7 +30,6 @@ header {
 .right{
   display: flex;
   align-items: center;
-  width: 500px;
 }
 
 .header-right{
@@ -48,59 +47,18 @@ header {
 }
 
 .log-icon {
-  width: 50px;
+  width: 200px;
 }
 
 .user-nickname {
   text-decoration: none;
   color: #333333;
   padding-top: 25px;
+  margin-left: 3px;
 }
 
 .lists-right {
   display: flex;
-}
-
-.logout {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.login {
-  text-decoration: none;
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.sign-up {
-  text-decoration: none;
-  line-height: 32px;
-  color: #333333;
-}
-
-.logbook {
-  text-decoration: none;
-  color: #333333;
-  margin-right: 3vw;
-}
-
-.logbook:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.logout:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.login:hover {
-  border-bottom: solid 3px #013763;
-}
-
-.sign-up:hover {
-  border-bottom: solid 3px #013763;
 }
 
 .logdivers-color{

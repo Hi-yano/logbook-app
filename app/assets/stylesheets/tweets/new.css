@@ -3,7 +3,8 @@
 }
 
 .tweet-title{
+  border-bottom: solid 3px #013763;
+  width: 100px;
   text-align: center;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin: 50px auto 20px auto;
 }
