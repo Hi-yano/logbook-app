@@ -2,17 +2,19 @@
   <div class="top-page-contents">
     <div class="left-contents">
       <div class="top-icon">
-        <%= link_to image_tag("icon-color.png", class:"log-icon"), "/" %>
-        <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
-        <%= link_to "ログの入力", new_area_path, class:"head-text" %>
+        <%= link_to image_tag("toplogo.png", class:"log-icon"), "/" %>
       </div>
     </div>
     <div class="right">
       <div class="right-contents">
+        <% if user_signed_in? %>
           <%= render "shared/search" %>
           <ul class="lists-right">
             <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), tweets_path %>
           </ul>
+        <% else %>
+          <h1>サービスを利用するにはアカウントの作成、またはログインしてください。</h1>
+        <% end %>
       </div>
     </div>
   </div>
@@ -23,7 +25,7 @@
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></li>
     <% else %>
       <li><%= link_to 'ログイン',  new_user_session_path, class:"session-text" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class:"session-text" %></li>
+      <li><%= link_to '新規作成', new_user_registration_path, class:"session-text" %></li>
     <% end %>
   </ul>
 </div>

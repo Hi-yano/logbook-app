@@ -47,13 +47,14 @@ header {
 }
 
 .log-icon {
-  width: 50px;
+  width: 200px;
 }
 
 .user-nickname {
   text-decoration: none;
   color: #333333;
   padding-top: 25px;
+  margin-left: 3px;
 }
 
 .lists-right {
