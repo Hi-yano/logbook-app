@@ -1,5 +1,4 @@
-<div class="tweet-area">
-  <ul class="tweet-contents">
+<ul class="tweet-contents">
     <li class="tweet-list">
     <% if @tweets.present? %>
       <% @tweets.each do |tweet| %>
@@ -20,9 +19,8 @@
             <%= tweet.text %>
           </div>
         </div>
-        </div>
-      <% end %>
+      </div>
     <% end %>
-    </div>
+  <% end %>
   </div>
 </div>

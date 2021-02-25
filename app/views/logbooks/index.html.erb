@@ -1,19 +1,21 @@
 <%= render "shared/header" %>
 <main>
+<div class="top-title">
   <div class="area">
     <div class="main-logo">
       <%= link_to image_tag("toplogo.png", class:"toplogo"), "/" %>
     </div>
     <h1 class="top-main">
-      いつでもダイビングの記録ができる
+      いつでもダイビングのツイート / 記録ができる
     </h1>
   </div>
-<div class="new-edit-btn">
-  <% if user_signed_in? %>
-    <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
-    <%= link_to "ログの入力", new_area_path, class:"head-text" %>
-    <%= link_to "記録の確認", user_path(current_user.id), class:"head-text" %>
-  <% end %>
+  <div class="new-edit-btn">
+    <% if user_signed_in? %>
+      <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
+      <%= link_to "ログの入力", new_area_path, class:"head-text" %>
+      <%= link_to "記録の確認", user_path(current_user.id), class:"head-text" %>
+    <% end %>
+  </div>
 </div>
 <div class="tweet-title-top">
   <p>ツイート一覧</p>
