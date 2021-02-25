@@ -22,6 +22,11 @@
 <div class="head-group">
   <ul class="head-list">
     <% if user_signed_in? %>
+      ログインユーザー：<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>
+    <% end %>
+  </ul>
+    <ul class="head-list">
+    <% if user_signed_in? %>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></li>
     <% else %>
       <li><%= link_to 'ログイン',  new_user_session_path, class:"session-text" %></li>
