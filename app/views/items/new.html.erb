@@ -13,23 +13,23 @@
     <h2 class="sub-title">装備品</h2>
     <div>
       <p>スーツタイプ</P>
-      <%= f.collection_select(:suitstype_id, Suitstype.all, :id, :name, {}) %>
+      <%= f.collection_select(:suitstype_id, Suitstype.all, :id, :name, {}, class: "form-field") %>
     </div>
     <div>
       <p>スーツの厚さ</P>
-      <%= f.text_field :thickness, placeholder:"例）5" %>
+      <%= f.text_field :thickness, placeholder:"例）5", class: "form-field" %>
     </div>
     <div>
       <p>ウエイト</P>
-      <%= f.text_field :weight, placeholder:"例）5" %>
+      <%= f.text_field :weight, placeholder:"例）5", class: "form-field" %>
     </div>
     <div>
       <p>タンク容量</P>
-      <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}) %>
+      <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}, class: "form-field") %>
     </div>
     <div>
       <p>タンクタイプ</P>
-      <%= f.collection_select(:type_id, Type.all, :id, :name, {}) %>
+      <%= f.collection_select(:type_id, Type.all, :id, :name, {}, class: "form-field") %>
     </div>
     <%= f.submit "次へ", class:"submit-send-btn" %>
   </div>
