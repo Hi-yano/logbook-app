@@ -96,3 +96,8 @@
   text-align: center;
   margin-top: 30px;
 }
+
+.logbook-sub-title{
+  border-bottom: solid 3px #013763;
+  margin: 2vh 0;
+}

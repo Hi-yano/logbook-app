@@ -6,7 +6,7 @@
       <%= link_to image_tag("toplogo.png", class:"toplogo"), "/" %>
     </div>
     <h1 class="top-main">
-      いつでもダイビングのツイート / 記録ができる
+      いつでもダイビングのツイートと記録ができる
     </h1>
   </div>
   <div class="new-edit-btn">
@@ -20,7 +20,6 @@
 <div class="tweet-title-top">
   <p>ツイート一覧</p>
 </div>
-<div class="tweet-area">
   <ul class="tweet-contents">
     <li class="tweet-list">
     <% if @tweets.present? %>
@@ -40,7 +39,6 @@
       </div>
       <% end %>
     <% end %>
-    <li>
-  </div>
-</div>
+    </li>
+  </ul>
 </main>

@@ -26,7 +26,7 @@
     <div class="logbook-list">
       <div class="top-log">
         <ul class="condition-log">
-          <h3>コンディション</h3>
+          <h3 class="logbook-sub-title">コンディション</h3>
           <% if @all.condition.present? %>
           <div class="lists-log">
             <p class="log-span">天気</p><%= @all.condition.weather %>
@@ -52,7 +52,7 @@
           <div> No data </div>
           </ul>
           <% end %>
-          <h3>装備品</h3>
+          <h3 class="logbook-sub-title">装備品</h3>
           <% if @all.item.present? %>
           <div class="lists-log">
             <p class="log-span">スーツ</p><%= @all.item.suitstype.name %>
@@ -84,7 +84,7 @@
         <% if @all.logbook.present? %>
       </div>
         <ul class="logbook-log">
-          <h3>記録</h3>
+          <h3 class="logbook-sub-title">記録</h3>
           <div class="lists-log">
             <p class="log-span">本数</p><%= @all.logbook.count %>/本目
           </div>
