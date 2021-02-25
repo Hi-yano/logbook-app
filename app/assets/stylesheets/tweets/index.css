@@ -23,10 +23,12 @@
 }
 
 .tweet-contents{
-  background-color: #FFF;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .tweet-list{
