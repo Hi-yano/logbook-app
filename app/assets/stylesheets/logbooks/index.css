@@ -58,3 +58,10 @@ body {
   text-align: center;
   margin: 50px auto 20px auto;
 }
+
+.devise-title{
+  border-bottom: solid 3px #013763;
+  width: 100px;
+  text-align: center;
+  margin: 50px auto 20px auto;
+}
