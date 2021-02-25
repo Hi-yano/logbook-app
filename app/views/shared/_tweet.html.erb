@@ -1,21 +1,28 @@
-<div class="tweet-list">
-  <% if @tweets.present? %>
-  <% @tweets.each do |tweet| %>
-    <div class="tweet-image-area">
-        <%= image_tag tweet.image.variant(resize: '500x500'), class: 'tweet-image' if tweet.image.attached? %>
-    </div>
-    <div class="tweets-nickname-area">
-    <div class="tweets-nickname">投稿者：<%= tweet.user.nickname %></div>
-    <% if user_signed_in? && current_user.id == tweet.user_id %>
-    <%= link_to '編集', edit_tweet_path(tweet.id), class: "tweets-nickname" %>
-    <%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "tweets-nickname" %>
+<div class="tweet-area">
+  <ul class="tweet-contents">
+    <li class="tweet-list">
+    <% if @tweets.present? %>
+      <% @tweets.each do |tweet| %>
+      <div class="group">
+        <div class="tweet-image-area">
+            <%= image_tag tweet.image.variant(resize: '600x400'), class: 'tweet-image' if tweet.image.attached? %>
+        </div>
+        <div class="tweets-nickname-area">
+          <h3 class="tweets-nickname">
+            投稿者：<%= tweet.user.nickname %>
+          </h3>
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <%= link_to '編集', edit_tweet_path(tweet.id), class: "tweets-nickname" %>
+            <%= link_to '削除', tweet_path(tweet.id), method: :delete, class: "tweets-nickname" %>
+          <% end %>
+        </div>
+          <div class="tweet-text">
+            <%= tweet.text %>
+          </div>
+        </div>
+        </div>
+      <% end %>
     <% end %>
     </div>
-    <div>
-      <div class="tweet-text">
-        <%= tweet.text %>
-      </div>
-    </div>
-  <% end %>
-  <% end %>
+  </div>
 </div>
