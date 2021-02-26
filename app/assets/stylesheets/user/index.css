@@ -63,6 +63,7 @@
   background: white;
   border-top: solid 5px #013763;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  margin-right: 2px;
 }
 
 .new-edit-btn{
@@ -72,8 +73,7 @@
 
 .new-edit-btn-my{
   margin-top: 2vh;
-  height: 7vh;
-  text-align: center;
+  text-align: right;
 }
 
 .session-text{
