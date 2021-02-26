@@ -13,7 +13,7 @@
     <% if user_signed_in? %>
       <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
       <%= link_to "ログの入力", new_area_path, class:"head-text" %>
-      <%= link_to "記録の確認", user_path(current_user.id), class:"head-text" %>
+      <%= link_to "マイページ", user_path(current_user.id), class:"head-text" %>
     <% end %>
   </div>
 </div>

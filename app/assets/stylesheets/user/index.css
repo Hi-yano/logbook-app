@@ -72,7 +72,8 @@
 
 .new-edit-btn-my{
   margin-top: 2vh;
-  margin-left: 5vw;
+  height: 7vh;
+  text-align: center;
 }
 
 .session-text{
