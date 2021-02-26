@@ -69,3 +69,8 @@ header {
   display: flex;
   align-items: center;
 }
+
+.right-contents{
+  display: flex;
+  margin-top: 1vh;
+}
