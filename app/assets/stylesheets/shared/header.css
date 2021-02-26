@@ -37,11 +37,6 @@ header {
   align-items: center;
 }
 
-.right-contents{
-  height: 30px;
-  display: flex;
-}
-
 .top-icon{
   font-size: 18px;
 }

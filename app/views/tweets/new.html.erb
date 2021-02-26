@@ -1,4 +1,7 @@
 <%= render "shared/second-header" %>
+<div class="new-edit-btn-my">
+  <%= link_to "マイページ", user_path(current_user.id), class:"head-text" %>
+</div>
 <div class="contents-row">
   <h3 class="tweet-title">投稿する</h3>
   <div class="container">
