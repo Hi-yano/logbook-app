@@ -12,8 +12,6 @@
           <ul class="lists-right">
             <li class="icon-area"><%= link_to image_tag("home-icon.png", class:"right-icon"), tweets_path %>
           </ul>
-        <% else %>
-          <h1>サービスを利用するにはアカウントの作成、またはログインしてください。</h1>
         <% end %>
       </div>
     </div>
@@ -22,7 +20,13 @@
 <div class="head-group">
   <ul class="head-list">
     <% if user_signed_in? %>
-      ログインユーザー：<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>
+    <div class="user-name-area">
+      <h3>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</h3>
+    </div>
+    <% else %>
+    <div class="user-name-area">
+      <h1>サービスを利用するにはアカウントの作成、またはログインしてください。</h1>
+    </div>
     <% end %>
   </ul>
     <ul class="head-list">
