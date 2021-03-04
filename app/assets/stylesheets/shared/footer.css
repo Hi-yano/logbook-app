@@ -6,7 +6,6 @@
 
 .foot-wrap .menu-left, .menu-center, .menu-right {
   display: inline-block;
-  width: 20%;
 }
 
 .foot-wrap ul {
@@ -40,13 +39,11 @@
   color: gray;
 }
 
-@media screen and (max-width: 900px) {
-  .foot-wrap .menu-left, .menu-center, .menu-right {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-  }
-  .foot-wrap .cpr {
-      display: inline;
-  }
+.footer-log-icon {
+  width: 200px;
+  padding: 5px;
+}
+
+.footer-text{
+  padding-bottom: 15px;
 }
