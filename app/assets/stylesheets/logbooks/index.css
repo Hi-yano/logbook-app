@@ -65,3 +65,23 @@ body {
   text-align: center;
   margin: 50px auto 20px auto;
 }
+
+.explanation{
+  padding: 20px;
+  margin: 20px 0;
+}
+
+body{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main{
+  flex: 1;
+}
+
+.logbook-exp{
+  text-align: center;
+  margin: 30px;
+}
