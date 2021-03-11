@@ -1,6 +1,7 @@
 class LogbooksController < ApplicationController
   def index
     @tweets = Tweet.all.order('created_at DESC')
+    @today = Date.today.strftime('%Y年%m月%d日')
   end
 
   def new
