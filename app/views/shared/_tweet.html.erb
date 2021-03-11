@@ -8,7 +8,7 @@
       </div>
       <div class="tweets-nickname-area">
         <h3 class="tweets-nickname">
-          投稿者：<%= tweet.user.nickname %>
+          投稿日：<%= l tweet.user.created_at %>
         </h3>
         <% if user_signed_in? && current_user.id == tweet.user_id %>
           <%= link_to '編集', edit_tweet_path(tweet.id), class: "tweets-nickname" %>
