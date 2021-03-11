@@ -19,7 +19,6 @@
 </header>
 <div class="head-group">
   <ul class="head-list">
-    <td><%= l user.created_at, format: :short %></td>
     <% if user_signed_in? %>
     <div class="user-name-area">
       <h3>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</h3>
