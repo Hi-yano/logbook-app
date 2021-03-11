@@ -90,7 +90,6 @@
 
 .session-text{
 /* ログイン・ログアウトのデザインを考える */
-position: relative;
 display: inline-block;
 font-weight: bold;
 padding: 0.25em 0.5em;
