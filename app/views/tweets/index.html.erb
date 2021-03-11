@@ -1,5 +1,10 @@
 <%= render "shared/mypage" %>
 <main>
+  <div class="new-edit-btn-my">
+    <%= link_to "ツイート確認", tweets_path, class:"head-text" %>
+    <%= link_to "ログブック", user_path(current_user.id), class:"head-text" %>
+    <%= link_to "トップページ", root_path, class:"head-text" %>
+  </div>
   <div class="area">
     <div class="tweet-title-my">
       <p>投稿したツイート</p>

@@ -6,13 +6,6 @@
         <%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %>
         さんのマイページ
       </div>
-      <div class="new-edit-btn-my">
-        <%= link_to "ツイート確認", tweets_path, class:"head-text" %>
-        <%= link_to "ログブック", user_path(current_user.id), class:"head-text" %>
-        <%# <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
-        <%# <%= link_to "ログの入力", new_area_path, class:"head-text" %>
-        <%= link_to "トップページ", root_path, class:"head-text" %>
-      </div>
     </div>
     <div class="right">
       <div class="right-contents">

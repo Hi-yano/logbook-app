@@ -44,6 +44,7 @@
         <div class="tweets-nickname-area">
           <h3 class="tweets-nickname">
             投稿者：<%= tweet.user.nickname %>
+            <P>投稿日：<%= l tweet.user.created_at %></p>
           </h3>
           <div class="tweet-text">
             <%= tweet.text %>
