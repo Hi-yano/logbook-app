@@ -27,9 +27,11 @@
   </div>
   <% else %>
   <div class="today">
-    <div>サービスを利用するにはアカウントの作成、またはログインしてください。</div>
-    <li><%= link_to 'ログイン',  new_user_session_path, class:"session-text" %></li>
-    <li><%= link_to '新規作成', new_user_registration_path, class:"session-text" %></li>
+    <div>サービスを利用するにはログイン、またはアカウントの作成してください。</div>
+    <div>
+      <%= link_to 'ログイン',  new_user_session_path, class:"session-text" %>
+      <%= link_to '新規作成', new_user_registration_path, class:"session-text" %>
+    </div>
   </div>
   <% end %>
   <div class="today">
