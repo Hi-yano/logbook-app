@@ -85,3 +85,9 @@ main{
   text-align: center;
   margin: 30px;
 }
+
+.today{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw 0 1vw;
+}

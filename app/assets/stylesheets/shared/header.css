@@ -19,7 +19,7 @@ header {
   box-shadow: 0px  1px 5px -2px gray inset;
   height: 70px;
   width: 100vw;
-  padding: 1vh 0 0 5vw;
+  padding: 1vh 0 0 1vw;
 }
 
 .my-header{
@@ -80,4 +80,29 @@ header {
 .right-contents{
   display: flex;
   margin-top: 1vh;
+}
+
+.session-text {
+  font-weight: bold;
+  font-size: 10px;
+  padding: 0.25em 0;
+  text-decoration: none;
+  color: #013763;  
+}
+
+.session-text:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  top:100%;
+  left: 0;
+  border-radius: 3px;
+  background:#013763;
+  transition: .2s;
+}
+
+.session-text:hover:before {
+  top: -webkit-calc(100% - 3px);
+  top: calc(100% - 3px);
 }

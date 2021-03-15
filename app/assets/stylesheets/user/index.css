@@ -88,26 +88,8 @@
   font-size: 23px;
 }
 
-.session-text{
-/* ログイン・ログアウトのデザインを考える */
-display: inline-block;
-font-weight: bold;
-padding: 0.25em 0.5em;
-text-decoration: none;
-color: #013763;
-transition: .4s;
-margin-right: 2vw;
-border-radius: 5px;
-}
-
-.session-text:hover{
-  background: #013763;
-  color: white;
-}
-
 .head-list{
-  display: flex;
-  justify-content: flex-end;
+  margin-left: 5vw;
 }
 
 .toplogo{

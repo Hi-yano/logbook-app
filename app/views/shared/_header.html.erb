@@ -3,7 +3,6 @@
     <div class="left-contents">
       <div class="top-icon">
         <%= link_to image_tag("toplogo.png", class:"log-icon"), "/" %>
-        <%= @today %>
       </div>
     </div>
     <div class="right">
@@ -18,24 +17,23 @@
     </div>
   </div>
 </header>
+
 <div class="head-group">
-  <ul class="head-list">
-    <% if user_signed_in? %>
-    <div class="user-name-area">
-      <h3>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</h3>
-    </div>
-    <% else %>
-    <div class="user-name-area">
-      <h1>サービスを利用するにはアカウントの作成、またはログインしてください。</h1>
-    </div>
-    <% end %>
-  </ul>
-    <ul class="head-list">
-    <% if user_signed_in? %>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></li>
-    <% else %>
-      <li><%= link_to 'ログイン',  new_user_session_path, class:"session-text" %></li>
-      <li><%= link_to '新規作成', new_user_registration_path, class:"session-text" %></li>
-    <% end %>
-  </ul>
+
+  <% if user_signed_in? %>
+  <div class="today">
+    <div>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</div>
+    <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></div>
+  </div>
+  <% else %>
+  <div class="today">
+    <div>サービスを利用するにはアカウントの作成、またはログインしてください。</div>
+    <li><%= link_to 'ログイン',  new_user_session_path, class:"session-text" %></li>
+    <li><%= link_to '新規作成', new_user_registration_path, class:"session-text" %></li>
+  </div>
+  <% end %>
+  <div class="today">
+    <%= @today %>
+  </div>
+
 </div>
