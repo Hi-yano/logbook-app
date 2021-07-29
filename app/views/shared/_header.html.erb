@@ -2,7 +2,7 @@
   <div class="top-page-contents">
     <div class="left-contents">
       <div class="top-icon">
-        <%= link_to image_tag("toplogo.png", class:"log-icon"), "/" %>
+        <%= link_to image_tag("footer-logo.png", class:"log-icon"), "/" %>
       </div>
     </div>
     <div class="right">
@@ -27,16 +27,13 @@
   </div>
   <% else %>
   <div class="today">
-    <div>サービスを利用するにはログイン、またはアカウントの作成してください。</div>
-    <div>
       <%= link_to 'ログイン',  new_user_session_path, class:"session-text" %>
-      /
       <%= link_to '新規作成', new_user_registration_path, class:"session-text" %>
-    </div>
   </div>
   <% end %>
   <div class="today">
     <%= @today %>
+    <%= javascript_pack_tag 'hello_vue' %>
   </div>
 
 </div>

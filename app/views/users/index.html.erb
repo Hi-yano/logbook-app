@@ -1,6 +1,12 @@
 <%= render "shared/mypage" %>
-<main>
+<%= javascript_pack_tag 'burger-menu' %>
+<body>
   <div class="new-edit-btn-my">
+  </div>
+
+
+
+
     <%= link_to "ツイート確認", tweets_path, class:"head-text" %>
     <%= link_to "ログブック", user_path(current_user.id), class:"head-text" %>
     <%= link_to "トップページ", root_path, class:"head-text" %>
@@ -33,25 +39,34 @@
         <ul class="condition-log">
           <h3 class="logbook-sub-title">コンディション</h3>
           <% if @all.condition.present? %>
-          <div class="lists-log">
-            <p class="log-span">天気</p><%= @all.condition.weather %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">風速</p><%= @all.condition.wind %>/m
-          </div>
-          <div class="lists-log">
-            <p class="log-span">気温</p><%= @all.condition.temperature %>/℃
-          </div>
-          <div class="lists-log">
-            <p class="log-span">水温</p><%= @all.condition.water_temperature %>/℃
-          </div>
-          <div class="lists-log">
-            <p class="log-span">波高</p><%= @all.condition.wave %>/m
-          </div>
-          <div class="lists-log">
-            <p class="log-span">潮流</p><%= @all.condition.tide.name %>
-          </div>
-          <ul class="item-log">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>天気　　　　</td>
+                    <td>：<%= @all.condition.weather %></td>
+                  </tr>
+                  <tr>
+                    <td>風速</td>
+                    <td>：<%= @all.condition.wind %>/m</td>
+                  </tr>
+                  <tr>
+                    <td>気温</td>
+                    <td>：<%= @all.condition.temperature %>/℃</td>
+                  </tr>
+                  <tr>
+                    <td>水温</td>
+                    <td>：<%= @all.condition.water_temperature %>/℃</td>
+                  </tr>
+                  <tr>
+                    <td>波高</td>
+                    <td>：<%= @all.condition.wave %>/m</td>
+                  </tr>
+                  <tr>
+                    <td>潮流</td>
+                    <td>：<%= @all.condition.tide.name %></td>
+                  </tr>
+                </tbody>
+              </table>
           <% else %>
           <Ul>
           <div> No data </div>
@@ -59,21 +74,30 @@
           <% end %>
           <h3 class="logbook-sub-title">装備品</h3>
           <% if @all.item.present? %>
-          <div class="lists-log">
-            <p class="log-span">スーツ</p><%= @all.item.suitstype.name %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">厚み</p><%= @all.item.thickness %>/mm
-          </div>
-          <div class="lists-log">
-            <p class="log-span">ウエイト</p><%= @all.item.weight %>/kg
-          </div>
-          <div class="lists-log">
-            <p class="log-span">タンクタイプ</p><%= @all.item.type.name %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">タンク容量</p><%= @all.item.capacity.name %>/L
-          </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>スーツ</td>
+                  <td>：<%= @all.item.suitstype.name %></td>
+                </tr>
+                <tr>
+                  <td>厚み</td>
+                  <td>：<%= @all.item.thickness %>/mm</td>
+                </tr>
+                <tr>
+                  <td>ウエイト</td>
+                  <td>：<%= @all.item.weight %>/kg</td>
+                </tr>
+                <tr>
+                  <td>タンクタイプ</td>
+                  <td>：<%= @all.item.type.name %></td>
+                </tr>
+                <tr>
+                  <td>タンク容量</td>
+                  <td>：<%= @all.item.capacity.name %>/L</td>
+                </tr>
+              </tbody>
+            </table>
           <% if @all.logbook.image.attached? %>
           <p>Photo</p>
           <%= image_tag @all.logbook.image.variant(resize: '500x500'), class: 'logbook-image' %>
@@ -138,4 +162,5 @@
   <p> no data </p>
   <% end %>
 </div>
-</main>
+
+</body>
