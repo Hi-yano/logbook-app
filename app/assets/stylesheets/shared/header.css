@@ -16,10 +16,10 @@ header {
 }
 
 .my-page-header{
+  background-color: #013763;
   box-shadow: 0px  1px 5px -2px gray inset;
   height: 70px;
   width: 100vw;
-  padding: 1vh 0 0 1vw;
 }
 
 .my-header{
@@ -50,6 +50,7 @@ header {
 
 .log-icon {
   width: 200px;
+  margin: 10px 0 0 10px;
 }
 
 .user-nickname {

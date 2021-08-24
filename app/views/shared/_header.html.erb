@@ -2,7 +2,7 @@
   <div class="top-page-contents">
     <div class="left-contents">
       <div class="top-icon">
-        <%= link_to image_tag("toplogo.png", class:"log-icon"), "/" %>
+        <%= link_to image_tag("white-logo.png", class:"log-icon"), "/" %>
       </div>
     </div>
     <div class="right">
@@ -17,26 +17,3 @@
     </div>
   </div>
 </header>
-
-<div class="head-group">
-
-  <% if user_signed_in? %>
-  <div class="today">
-    <div>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</div>
-    <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></div>
-  </div>
-  <% else %>
-  <div class="today">
-    <div>サービスを利用するにはログイン、またはアカウントの作成してください。</div>
-    <div>
-      <%= link_to 'ログイン',  new_user_session_path, class:"session-text" %>
-      /
-      <%= link_to '新規作成', new_user_registration_path, class:"session-text" %>
-    </div>
-  </div>
-  <% end %>
-  <div class="today">
-    <%= @today %>
-  </div>
-
-</div>
