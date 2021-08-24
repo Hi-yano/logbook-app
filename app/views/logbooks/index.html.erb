@@ -1,38 +1,62 @@
 <body>
-<%= render "shared/header" %>
-<main>
-<div class="top-title">
-  <div class="area">
-    <div class="main-logo">
-      <%= link_to image_tag("toplogo.png", class:"toplogo"), "/" %>
+  <%= render "shared/header" %>
+  
+  <div class="head-group">
+    <% if user_signed_in? %>
+    <div class="today">
+      <div>こんにちは　<%= link_to current_user.nickname, user_path(current_user.id), class: "top-user-nickname" %>さん</div>
+      <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"session-text" %></div>
     </div>
-    <h1 class="top-main">
-      ダイビングのツイートと記録をしよう
-    </h1>
-  </div>
-  <div class="new-edit-btn">
-    <% if user_signed_in? %>
-      <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
-      <%= link_to "ログの入力", new_area_path, class:"head-text" %>
-      <%= link_to "マイページ", user_path(current_user.id), class:"head-text" %>
+    <% else %>
+    <div class="today">
+      <div>サービスを利用するにはログイン、またはアカウントの作成してください。</div>
+      <div>
+        <%= link_to 'ログイン',  new_user_session_path, class:"session-text" %>
+        /
+        <%= link_to '新規作成', new_user_registration_path, class:"session-text" %>
+      </div>
+    </div>
     <% end %>
+    <div class="today">
+      <%= @today %>
+    </div>
   </div>
-</div>
-<div class="explanation">
+
+  <main>
+  <div class="top-title">
+    <div class="area">
+      <div class="main-logo">
+        <%= link_to image_tag("toplogo.png", class:"toplogo"), "/" %>
+      </div>
+      <h1 class="top-main">
+        ダイビングのツイートと記録をしよう
+      </h1>
+    </div>
+    <div class="new-edit-btn">
+      <% if user_signed_in? %>
+        <%= link_to "ツイート投稿", new_tweet_path, class:"head-text" %>
+        <%= link_to "ログの入力", new_area_path, class:"head-text" %>
+        <%= link_to "マイページ", user_path(current_user.id), class:"head-text" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="explanation">
+    <div class="tweet-title-top">
+      <p>ログブック</p>
+    </div>
+    <div class="logbook-exp">
+      <%= image_tag("pc-image.png", class:"toplogo") %>
+      <p>その日のダイビングの情報を写真とともに記録することもできます。</p>
+      <% if user_signed_in? %>
+      <p>ログブックの入力は<%= link_to "こちら", new_area_path %></p>
+      <% end %>
+    </div>
+  </div>
+
   <div class="tweet-title-top">
-    <p>ログブック</p>
+    <p>ツイート一覧</p>
   </div>
-  <div class="logbook-exp">
-    <%= image_tag("pc-image.png", class:"toplogo") %>
-    <p>その日のダイビングの情報を写真とともに記録することもできます。</p>
-    <% if user_signed_in? %>
-    <p>ログブックの入力は<%= link_to "こちら", new_area_path %>から</p>
-    <% end %>
-  </div>
-</div>
-<div class="tweet-title-top">
-  <p>ツイート一覧</p>
-</div>
   <ul class="tweet-contents">
     <li class="tweet-list">
     <% if @tweets.present? %>
