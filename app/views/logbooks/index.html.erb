@@ -53,11 +53,10 @@
       <% end %>
     </div>
   </div>
-
+  <% if @tweets.present? %>
+  <p class="tweet-title-top">ツイート一覧</p>
   <ul class="tweet-contents">
     <li class="tweet-list">
-    <% if @tweets.present? %>
-        <p class="tweet-title-top">ツイート一覧</p>
       <% @tweets.each do |tweet| %>
       <div class="group">
         <div class="tweet-image-area">
