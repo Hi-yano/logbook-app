@@ -33,29 +33,29 @@
         <ul class="condition-log">
           <h3 class="logbook-sub-title">コンディション</h3>
           <% if @all.condition.present? %>
-          <div class="lists-log">
-            <p class="log-span">天気</p><%= @all.condition.weather %>
-          </div>
-          <div class="lists-log">
-            <p class="log-span">風速</p><%= @all.condition.wind %>/m
-          </div>
-          <div class="lists-log">
-            <p class="log-span">気温</p><%= @all.condition.temperature %>/℃
-          </div>
-          <div class="lists-log">
-            <p class="log-span">水温</p><%= @all.condition.water_temperature %>/℃
-          </div>
-          <div class="lists-log">
-            <p class="log-span">波高</p><%= @all.condition.wave %>/m
-          </div>
-          <div class="lists-log">
-            <p class="log-span">潮流</p><%= @all.condition.tide.name %>
-          </div>
-          <ul class="item-log">
+            <div class="lists-log">
+              <p class="log-span">天気</p><%= @all.condition.weather %>
+            </div>
+            <div class="lists-log">
+              <p class="log-span">風速</p><%= @all.condition.wind %>/m
+            </div>
+            <div class="lists-log">
+              <p class="log-span">気温</p><%= @all.condition.temperature %>/℃
+            </div>
+            <div class="lists-log">
+              <p class="log-span">水温</p><%= @all.condition.water_temperature %>/℃
+            </div>
+            <div class="lists-log">
+              <p class="log-span">波高</p><%= @all.condition.wave %>/m
+            </div>
+            <div class="lists-log">
+              <p class="log-span">潮流</p><%= @all.condition.tide.name %>
+            </div>
+            <ul class="item-log">
           <% else %>
-          <Ul>
-          <div> No data </div>
-          </ul>
+            <Ul>
+            <div> No data </div>
+            </ul>
           <% end %>
           <h3 class="logbook-sub-title">装備品</h3>
           <% if @all.item.present? %>
